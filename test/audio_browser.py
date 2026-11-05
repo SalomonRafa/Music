@@ -9,7 +9,7 @@ with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--use-file-for-fake-audio-capture='+wave_path])
  c=b.new_context(permissions=['microphone'],viewport={'width':1440,'height':1000});page=c.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.add_init_script('''window.captureCount=0;window.openTracks=[];const gum=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);navigator.mediaDevices.getUserMedia=async (...args)=>{window.captureCount++;const s=await gum(...args);window.openTracks.push(...s.getTracks());return s;}''')
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.3.1');page.get_by_role('button',name='Áudio',exact=True).click();page.get_by_text('Áudio · 0.3.1',exact=True).wait_for()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.4.0');page.get_by_role('button',name='Áudio',exact=True).click();page.get_by_text('Áudio · 0.4.0',exact=True).wait_for()
  page.get_by_role('button',name='Iniciar gravação',exact=True).click();page.get_by_role('button',name='Parar gravação',exact=True).wait_for();page.wait_for_function("document.querySelector('#signal-label').textContent==='recebendo som'")
  page.locator('#target-note').select_option(label='4ª corda · Ré4 (D4)');page.get_by_role('button',name='Ligar afinador',exact=True).click();page.wait_for_function("document.querySelector('#pitch').textContent==='Ré4'")
  assert page.evaluate('window.captureCount')==1
@@ -44,7 +44,7 @@ with wave.open(wave_path,"wb") as f:
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--use-file-for-fake-audio-capture='+wave_path])
  c=b.new_context(permissions=['microphone']);page=c.new_page()
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.3.1')
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.4.0')
  page.get_by_role('button',name='Áudio',exact=True).click()
  page.locator('#target-note').select_option(label='4ª corda · Ré4 (D4)')
  page.get_by_role('button',name='Ligar afinador',exact=True).click()
@@ -58,6 +58,32 @@ with sync_playwright() as p:
  page.wait_for_function("document.querySelector('#pitch').textContent==='—'",timeout=4000)
  assert page.locator('#tuner-panel').get_attribute('data-state')=='idle'
  print('PASS: palhetada com decaimento conserva nota e ponteiro após perda do sinal; leitura retida identificada; indicação expira após o período de retenção.')
+ b.close()
+
+
+# Direção de ajuste no navegador: Ré 20 cents grave, depois 20 cents agudo.
+with wave.open(wave_path,"wb") as f:
+ f.setnchannels(1);f.setsampwidth(2);f.setframerate(48000)
+ def detuned(i):
+  t=i/48000
+  cents=-20 if t<3 else 20
+  hz=293.6647679*2**(cents/1200)
+  return int(32767*.04*(math.sin(2*math.pi*hz*t)+.3*math.sin(4*math.pi*hz*t)))
+ f.writeframes(b"".join(struct.pack("<h",detuned(i)) for i in range(48000*7)))
+with sync_playwright() as p:
+ b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--use-file-for-fake-audio-capture='+wave_path])
+ c=b.new_context(permissions=['microphone']);page=c.new_page()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.4.0')
+ page.get_by_role('button',name='Áudio',exact=True).click()
+ page.locator('#target-note').select_option(label='1ª corda · Ré4 (D4)')
+ page.get_by_role('button',name='Ligar afinador',exact=True).click()
+ page.wait_for_function("document.querySelector('#tuner-panel').dataset.state==='low'",timeout=5000)
+ assert 'mais AGUDO' in page.locator('#tuning-message').inner_text()
+ assert int(page.locator('#tuning-gauge').get_attribute('aria-valuenow'))<0
+ page.wait_for_function("document.querySelector('#tuner-panel').dataset.state==='high'",timeout=5000)
+ assert 'mais GRAVE' in page.locator('#tuning-message').inner_text()
+ assert int(page.locator('#tuning-gauge').get_attribute('aria-valuenow'))>0
+ print('PASS: Ré da 1ª corda abaixo pede mais AGUDO; acima pede mais GRAVE; ponteiro tem direção correta.')
  b.close()
 
 Path(wave_path).unlink(missing_ok=True)
