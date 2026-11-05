@@ -46,3 +46,9 @@ Revisar o conteúdo com professor de cavaquinho, adicionar importação de backu
 - **Privacidade e persistência:** cifras e registros ficam no navegador. Áudios e PDFs abertos são temporários e liberados ao sair da seção. Não há sincronização entre dispositivos.
 
 Validação: `npm test` cobre orçamento de treino, persistência, sinais senoidais, fórmulas e inversões de acordes, transposição, escape de HTML e espectros idealizados de tríades. Os controles de navegador foram exercitados com Chromium e microfone simulado; não se considera isso validação de precisão em cavaquinho real.
+
+### Afinador: uso e diagnóstico
+
+Na área Áudio, escolha a entrada e a corda-alvo (ou modo cromático), ligue o afinador e autorize o microfone. Toque uma corda solta. O ponteiro indica desvio em cents; verde significa até ±5 cents. A barra mostra se há sinal chegando, independentemente da identificação de nota. Se ficar sem sinal, confira a entrada selecionada, permissão do site e nível de entrada do sistema. Se houver som sem nota estável, isole uma corda e reduza o ruído. A leitura usa YIN com interpolação, limiar para sinais baixos e suavização curta. O grafo de áudio permanece conectado com saída muda, sem reproduzir o microfone.
+
+A correção foi verificada no Chromium com um WAV de Ré4 em volume baixo entrando como microfone simulado, incluindo nota, alvo, medidor, reinício e descarte ao navegar. Testes adicionais cobrem sinais baixos com harmônicos e decaimento, ruído e direção do desvio. Isso não substitui validação nos dispositivos reais do aluno.
