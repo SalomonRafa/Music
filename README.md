@@ -52,3 +52,15 @@ Validação: `npm test` cobre orçamento de treino, persistência, sinais senoid
 Na área Áudio, escolha a entrada e a corda-alvo (ou modo cromático), ligue o afinador e autorize o microfone. Toque uma corda solta. O ponteiro indica desvio em cents; verde significa até ±5 cents. A barra mostra se há sinal chegando, independentemente da identificação de nota. Se ficar sem sinal, confira a entrada selecionada, permissão do site e nível de entrada do sistema. Se houver som sem nota estável, isole uma corda e reduza o ruído. A leitura usa YIN com interpolação, limiar para sinais baixos e suavização curta. O grafo de áudio permanece conectado com saída muda, sem reproduzir o microfone.
 
 A correção foi verificada no Chromium com um WAV de Ré4 em volume baixo entrando como microfone simulado, incluindo nota, alvo, medidor, reinício e descarte ao navegar. Testes adicionais cobrem sinais baixos com harmônicos e decaimento, ruído e direção do desvio. Isso não substitui validação nos dispositivos reais do aluno.
+
+### Versão 0.3.1: entrada de áudio unificada
+
+Gravador e afinador agora compartilham um único MediaStream e uma barra de entrada comum. É possível gravar enquanto se afina, sem abrir um segundo microfone. Parar a gravação ou o afinador não encerra a captura compartilhada; use **Desligar microfone**, ou saia da área Áudio, para liberar o dispositivo. A seleção de entrada fica bloqueada durante a captura: desligue antes de trocar. Uma suspensão do AudioContext é mostrada com botão para retomar. O diagnóstico técnico exportável inclui estado do processamento, nível RMS, frequência detectada e último erro, sem áudio, nomes de dispositivos ou credenciais.
+
+A interface mostra **Áudio · 0.3.1**. HTML e todos os módulos usam a mesma versão de recurso na URL para evitar misturar arquivos de versões distintas no cache. Se esse identificador não aparecer, o navegador ainda não está executando esta versão. O envio à branch main não comprova que o deploy público já terminou; confira a publicação em Settings → Pages / Actions.
+
+### Continuidade da leitura no decaimento
+
+A versão 0.3.1 usa mediana de até três leituras e exige duas detecções consistentes para aceitar uma mudança brusca, reduzindo saltos isolados para harmônicos. Falhas breves não zeram imediatamente o ponteiro. Após 250 ms sem uma nova nota válida, a indicação muda para **Última leitura**, com cor neutra; a posição é mantida até 2,5 segundos após a última detecção. Depois disso, nota e ponteiro são limpos. O limiar de sinal foi reduzido para 0,0005 RMS e são solicitadas opções ideais sem cancelamento de eco, supressão de ruído ou ganho automático para preservar o decaimento. O navegador pode não atender a todas essas opções.
+
+Teste opcional de integração: com Playwright Python e Chromium disponíveis, inicie o app e execute `python test/audio_browser.py`. Para outra porta, configure `APP_URL`. O teste gera temporariamente um WAV contínuo e outro com palhetada seguida de silêncio, verificando a captura compartilhada, nota, retenção e expiração do ponteiro. Os testes usam entrada simulada; a validação nos dispositivos reais continua necessária.
