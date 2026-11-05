@@ -1,3 +1,4 @@
+import {STANDARD_TUNING,LEGACY_INCORRECT_TUNING} from './instrument.js?v=0.5.0';
 export const exercises=[
  {id:'pulse',title:'Encontre o pulso',label:'Ritmo',minutes:3,bpm:60,description:'Abafe as cordas suavemente com a mão esquerda. Faça uma palhetada para baixo a cada clique, sem apertar os dedos contra a escala.',success:'Complete 4 grupos de 8 cliques sem interromper o pulso. Se perder o clique, recomece o grupo.'},
  {id:'clarity',title:'Uma nota de cada vez',label:'Clareza',minutes:4,bpm:null,description:'Com o instrumento afinado, toque cada corda solta separadamente. Escute se o som fica livre. Depois pressione uma corda na primeira casa, perto do traste, e compare. Use apenas a pressão necessária.',success:'Toque as 4 cordas soltas e uma nota pressionada com som claro, sem dor. Repita 3 vezes.'},
@@ -11,4 +12,4 @@ export function makePlan(minutes=15,goal='acompanhar',level='iniciante'){
  let remaining=total;
  return list.map((e,i)=>{const duration=i===list.length-1?remaining:Math.max(1,Math.round(total*e.minutes/list.reduce((s,x)=>s+x.minutes,0)));remaining-=duration;return {...e,minutes:duration,bpm:e.bpm?level==='intermediario'?e.bpm+10:e.bpm:null};});
 }
-export function loadState(storage){try {const s=JSON.parse(storage.getItem('mestre-cavaquinho-v1'));if(s&&Array.isArray(s.sessions)&&s.profile&&typeof s.profile==='object')return s;}catch{}return {profile:{name:'Rafael',level:'iniciante',goal:'acompanhar',minutes:15,tuning:'D4–G3–B3–D4'},sessions:[]};}
+export function loadState(storage){try {const s=JSON.parse(storage.getItem('mestre-cavaquinho-v1'));if(s&&Array.isArray(s.sessions)&&s.profile&&typeof s.profile==='object'){if(s.profile.tuning===LEGACY_INCORRECT_TUNING)s.profile.tuning=STANDARD_TUNING;return s;}}catch{}return {profile:{name:'Rafael',level:'iniciante',goal:'acompanhar',minutes:15,tuning:STANDARD_TUNING},sessions:[]};}

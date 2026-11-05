@@ -8,7 +8,7 @@ http.createServer(async(req,res)=>{
   try {
     const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
     const file=path.resolve(root,'.'+(pathname==='/'?'/index.html':pathname));
-    if(!file.startsWith(root)||!['/index.html','/src/app.js','/src/domain.js','/src/audio.js','/src/chord-listener.js','/src/chords.js','/src/songbook.js','/src/style.css'].includes(pathname==='/'?'/index.html':pathname)){res.writeHead(404);res.end('Não encontrado');return;}
+    if(!file.startsWith(root)||!['/index.html','/src/app.js','/src/domain.js','/src/audio.js','/src/instrument.js','/src/chord-listener.js','/src/chords.js','/src/songbook.js','/src/style.css'].includes(pathname==='/'?'/index.html':pathname)){res.writeHead(404);res.end('Não encontrado');return;}
     res.writeHead(200,{'Content-Type':types[path.extname(file)],'Cache-Control':'no-cache'});res.end(await readFile(file));
   }catch {res.writeHead(404);res.end('Não encontrado');}
 }).listen(Number(process.env.PORT)||3000,'0.0.0.0',()=>console.log('Mestre de Cavaquinho iniciado na porta '+(process.env.PORT||3000)));
