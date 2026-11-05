@@ -15,6 +15,12 @@ O servidor escuta na porta 3000 em todas as interfaces. `PORT` permite escolher 
 
 ## Validar
 
+## Publicar no GitHub Pages
+
+Em Settings → Pages do repositório, selecione **Deploy from a branch**, branch **main** e pasta **/ (root)**. Salve. O site esperado é `https://salomonrafa.github.io/Music/`. Os arquivos são estáticos e não precisam de build; o servidor Node é usado apenas no desenvolvimento. Os caminhos relativos permitem executar no subdiretório `/Music/`.
+
+## Testes
+
 ```sh
 npm run check
 npm test
