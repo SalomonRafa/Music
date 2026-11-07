@@ -3,12 +3,21 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.9.0');page.get_by_role('button',name='Acordes',exact=True).click()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.10.0');page.get_by_role('button',name='Acordes',exact=True).click()
  assert page.locator('#chord-max').input_value()=='12'
  assert page.locator('#chord-max').get_attribute('max')=='12'
  page.locator('summary').click()
  assert page.locator('#chord-span').input_value()=='5'
  assert page.locator('#chord-rootless').is_checked()
+ page.locator('#chord-symbol').fill('Asus');page.get_by_role('button',name='Consultar acorde',exact=True).click()
+ assert page.locator('#chord-quality').input_value()=='sus4'
+ a=page.locator('.chord-shape').filter(has_text='2–2–3–2')
+ assert a.count()==1
+ assert a.locator('.chord-barre[data-fret="2"]').count()==1
+ assert a.locator('.chord-note-label').all_text_contents()==['1','1','2','1']
+ page.locator('#chord-root').select_option('F#');assert page.locator('#chord-symbol').input_value()=='F#sus4'
+ page.locator('#chord-quality').select_option('sus2');assert page.locator('#chord-symbol').input_value()=='F#sus2'
+ assert page.locator('.chord-shape').count()>0
  page.locator('#chord-symbol').fill('C7(13)');page.get_by_role('button',name='Consultar acorde',exact=True).click()
  assert '5–3–5–7' in page.locator('#chord-results').inner_text()
  source=page.locator('.chord-shape').filter(has_text='5–3–5–7')

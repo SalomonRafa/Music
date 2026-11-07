@@ -73,3 +73,9 @@ O alcance padrão da mão passa de quatro para **cinco casas consecutivas**; con
 Referência testada: **C7(13)** tem C–E–G–Bb–A. A forma **5–3–5–7**, da 4ª à 1ª, toca **G–Bb–E–A**, omitindo C, com sugestão de dedos **2–1–3–4**. Essa forma abrangia cinco casas e era excluída por duas restrições anteriores. A correção é geral: para cada fundamental, o motor considera tanto alternativas sem quinta quanto sem fundamental, quando as opções permitem. As verificações de notas percorrem todos os resultados, não apenas os primeiros seis.
 
 A referência enviada para **Em7(9)** é **2–0–3–4**: E–G–D–F#, sem a quinta B. Ela não é uma forma de Bm7(9), cujo conjunto é B–D–F#–A–C#. A forma **9–7–10–11** de Bm9 contém B–D–A–C#, sem a quinta F#. Ambas têm testes próprios. Na ordem de partida, formas com fundamental presente vêm antes das alternativas sem fundamental; o modo de registro permanece independente desse agrupamento.
+
+## Suspensos · 0.10.0
+
+O grupo **Suspensos · sus = sus4** reúne sus2, sus4, 7sus2, 7sus4, 9sus4 e 13sus4 em todas as 12 fundamentais. Grafias sem número como Asus e A7sus são aliases de Asus4 e A7sus4. A busca sugere também essas grafias; cifras importadas usam o mesmo interpretador.
+
+Em sus4, a terça é substituída pela quarta; em sus2, pela segunda. A extensão não deve reintroduzir uma terça nem permitir que a suspensão seja omitida. Isso é testado em todos os resultados e fundamentais. A forma de referência **Asus = 2–2–3–2** contém E–A–D–E, com pestana na 2ª casa e sugestão de dedos 1–1–2–1. O limite do instrumento continua em 12 trastes.
