@@ -40,6 +40,14 @@ A busca deixa de depender apenas de uma lista fechada de famílias. Entende exte
 
 O gerador apresenta o total de resultados e permite paginação, faixa de casas, extensão de mão e cordas abafadas. Em acordes com mais de quatro alturas, pode omitir quinta justa e, em extensões superiores, 11ª/9ª naturais, sem eliminar a extensão mais alta que define o acorde nem tensões alteradas. A fundamental só pode ser omitida com opção explícita. Cada omissão é mostrada; uma adaptação de quatro notas não é descrita como acorde completo. Se a seleção ainda requer mais de quatro alturas, a ferramenta explica esse limite em vez de inventar uma posição.
 
-Exemplo validado: **A7(9) = A9 = A–C#–E–G–B**. A posição **7–6–8–9**, da 4ª à 1ª corda em D4–G4–B4–D5, toca **A–C#–G–B**, sem a quinta E. Os números do diagrama representam casas, não dedos.
+Exemplo validado: **A7(9) = A9 = A–C#–E–G–B**. A posição **7–6–8–9**, da 4ª à 1ª corda em D4–G4–B4–D5, toca **A–C#–G–B**, sem a quinta E. A sequência Casas representa posições no braço; os círculos mostram dedos sugeridos por padrão, com modo alternativo para casas.
 
 Não se afirma que o catálogo contém toda nomenclatura ou digitação existente. As posições são candidatas sob os filtros declarados, não uma avaliação de conforto ou uma edição musical revisada. Teste de navegador opcional: `python test/chords_browser.py`, com `APP_URL` se necessário. O mesmo interpretador é usado nas cifras importadas para consulta e transposição.
+
+## Diagramas e pestanas · versão 0.7.0
+
+A representação e a ordenação foram revistas de forma geral. O modelo de digitação procura cobrir as notas com até quatro dedos, incluindo pestanas completas ou parciais, sem passar por cordas que precisam soar soltas ou estão abafadas. A ordenação combina número de contatos, extensão da mão, cordas abafadas, região do braço e presença da fundamental no grave. Não representa estatística de uso nem uma revisão de conforto por professor.
+
+Por padrão, círculos mostram **dedos sugeridos (1–4)**; a barra mostra a pestana. O seletor permite voltar aos números das casas. A casa inicial fica à esquerda, e a sequência **Casas**, da 4ª à 1ª, permanece explícita em ambos os modos. Isso também vale para os diagramas consultados dentro do repertório.
+
+Regressão de referência: **Am7, casas 7–5–5–5**, produz A–C–E–G. A sugestão é pestana na casa 5 e dedo 3 na casa 7 da 4ª corda. Essa posição já era gerada na versão anterior, mas não tinha a pestana desenhada e aparecia depois da inversão 5–5–5–7. A auditoria percorre todas as 12 fundamentais e famílias do catálogo, conferindo contatos, notas e pestanas. Não se rotulam resultados como “mais usados” sem referência musical independente.
