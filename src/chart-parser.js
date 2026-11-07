@@ -1,4 +1,4 @@
-import {parseChord} from './harmony.js?v=0.14.1';
+import {parseChord} from './harmony.js?v=0.15.0';
 const separators=/^[()|│┃‖:%,;·•/\-]+$/;
 const annotation=/^(?:\(?\d+x\)?|\(?x\d+\)?|intro(?:dução)?:?|refr[aã]o:?|ponte:?|verso:?|estrofe:?|solo:?|tom:?|parte:?|final:?)$/i;
 export function looksLikeChord(value){return /^[A-G][#b]?(?:(?:m|maj|M|dim|aug|sus|add|no|omit|alt)|[0-9#b+(),/°øΔ-])*(?:\/[A-G][#b]?)?$/.test(value);}
