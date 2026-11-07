@@ -9,3 +9,5 @@
 .tuner-panel[data-state=held]{background:#f5f2e8;border-color:#d7c99f;color:#877344}.tuner-panel[data-state=held] .tuning-needle{opacity:.7}.tuner-panel[data-state=held] .tuning-center{background:#ded6bb66}
 
 .tuner-string{font-size:14px;font-weight:700;margin:5px 0 15px;color:#536d49}.tuner-panel[data-state=uncertain],.tuner-panel[data-state=acquiring]{background:#f3f2e9;border-color:#d9d2b6;color:#837344}.tuner-panel[data-state=uncertain] .tuning-needle{opacity:0}
+
+.check-label{display:flex;align-items:center;gap:10px;margin-top:15px}.check-label input{width:auto}.chord-examples{gap:6px}.chord-examples button{padding:8px 11px}.voicings{scroll-snap-type:x proximity}.chord-shape{scroll-snap-align:start}details summary{cursor:pointer;font-size:13px;color:#526b42}#chord-symbol{font-size:18px}
