@@ -3,10 +3,27 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.8.0');page.get_by_role('button',name='Acordes',exact=True).click()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.9.0');page.get_by_role('button',name='Acordes',exact=True).click()
  assert page.locator('#chord-max').input_value()=='12'
  assert page.locator('#chord-max').get_attribute('max')=='12'
  page.locator('summary').click()
+ assert page.locator('#chord-span').input_value()=='5'
+ assert page.locator('#chord-rootless').is_checked()
+ page.locator('#chord-symbol').fill('C7(13)');page.get_by_role('button',name='Consultar acorde',exact=True).click()
+ assert '5–3–5–7' in page.locator('#chord-results').inner_text()
+ source=page.locator('.chord-shape').filter(has_text='5–3–5–7')
+ assert 'Omitidas: C (1)' in source.inner_text()
+ assert source.locator('.chord-note-label').all_text_contents()==['2','1','3','4']
+ page.locator('#chord-rootless').uncheck();page.get_by_role('button',name='Consultar acorde',exact=True).click()
+ assert '5–3–5–7' not in page.locator('#chord-results').inner_text()
+ page.locator('#chord-rootless').check()
+ page.locator('#chord-symbol').fill('Em7(9)');page.get_by_role('button',name='Consultar acorde',exact=True).click()
+ assert '2–0–3–4' in page.locator('#chord-results').inner_text()
+ e=page.locator('.chord-shape').filter(has_text='2–0–3–4')
+ assert 'Omitidas: B (5)' in e.inner_text()
+ assert e.locator('.chord-note-label').all_text_contents()==['1','2','3']
+ page.locator('#chord-symbol').fill('Bm7(9)');page.get_by_role('button',name='Consultar acorde',exact=True).click()
+ assert '9–7–10–11' in page.locator('#chord-results').inner_text()
  page.locator('#chord-symbol').fill('A7(9)');page.get_by_role('button',name='Consultar acorde',exact=True).click()
  assert page.locator('#chord-root').input_value()=='A';assert page.locator('#chord-quality').input_value()=='9';assert 'A9' in page.locator('#chord-results').inner_text();assert 'E (5)' in page.locator('#chord-results').inner_text()
  assert page.locator('.chord-shape').count()>0
@@ -46,9 +63,10 @@ with sync_playwright() as p:
  page.locator('#chord-symbol').fill('inexistente');page.get_by_role('button',name='Consultar acorde',exact=True).click();assert 'Símbolo não reconhecido' in page.locator('#chord-results').inner_text()
  page.get_by_role('button',name='Repertório',exact=True).click();page.locator('#song-source').fill('A7(9)  Bm7(b5)');page.locator('#preview-chart').click();page.locator('[data-lookup="A7(9)"]').click();assert 'A9' in page.locator('#lookup-area').inner_text()
  assert page.locator('#lookup-area .chord-shape').count()>0
- assert page.locator('#lookup-area [data-chord-page="8"]').count()==0
+ if page.locator('#lookup-area [data-chord-page="12"]').count():
+  page.locator('#lookup-area [data-chord-page="12"]').click()
  page.locator('#transpose').select_option('2');assert page.locator('[data-lookup="B7(9)"]').count()==1
  page.get_by_role('button',name='Acordes',exact=True).click();page.set_viewport_size({'width':390,'height':844});assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
  assert not errors,errors
- print('PASS: Bm7 simples, distinção BM7, ordenação grave/agudo, limite confirmado de 12 trastes, A9, omissões, pestanas, paginação, famílias, cifras e tela móvel.')
+ print('PASS: C7(13), Em7(9), Bm7(9), omissões por posição, Bm7 aberto, registro, limite de 12 trastes, pestanas, filtros, cifras e tela móvel.')
  b.close()

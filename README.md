@@ -63,3 +63,13 @@ Há seletores de **mais grave** e **mais agudo**. Usam a nota mais aguda da posi
 As famílias estão agrupadas em tríades/suspensos, sétimas, sextas/notas adicionadas, extensões e alterados. Há consulta explícita para m7(11), maj7(#11), 7(b9,#11), 7(#9,b13) e 13(b9), além das fórmulas já interpretadas. Combinações que não cabem nas quatro cordas recebem explicação e opções de omissão, não notas inventadas. Posições passam a uma grade responsiva para evitar esconder todas as variantes em uma faixa horizontal.
 
 O usuário confirmou que **seu instrumento tem 12 trastes**. Esse limite está em `src/instrument.js` e é aplicado no gerador, nos campos de filtro e nas consultas dentro do repertório. Mesmo uma chamada com `maxFret: 24` é limitada a 12 para este instrumento. A configuração não pretende descrever todos os cavaquinhos existentes. Não são geradas posições na 14ª ou 16ª casa.
+
+## Adaptações alternativas · 0.9.0
+
+A revisão anterior escolhia uma única redução (quinta antes da fundamental), o que excluía formas válidas do repertório. O gerador agora enumera combinações alternativas das omissões permitidas, mantendo terça, sétima, alterações e extensão principal. Para acordes com mais de quatro alturas, as alternativas sem fundamental são incluídas por padrão e podem ser desativadas. A omissão aparece em **cada cartão**, porque não é igual em todas as posições. Um voicing sem fundamental depende do contexto harmônico e não é descrito como fórmula completa.
+
+O alcance padrão da mão passa de quatro para **cinco casas consecutivas**; continua ajustável e não altera o limite de **12 trastes** do instrumento. São exibidas até 12 posições por página.
+
+Referência testada: **C7(13)** tem C–E–G–Bb–A. A forma **5–3–5–7**, da 4ª à 1ª, toca **G–Bb–E–A**, omitindo C, com sugestão de dedos **2–1–3–4**. Essa forma abrangia cinco casas e era excluída por duas restrições anteriores. A correção é geral: para cada fundamental, o motor considera tanto alternativas sem quinta quanto sem fundamental, quando as opções permitem. As verificações de notas percorrem todos os resultados, não apenas os primeiros seis.
+
+A referência enviada para **Em7(9)** é **2–0–3–4**: E–G–D–F#, sem a quinta B. Ela não é uma forma de Bm7(9), cujo conjunto é B–D–F#–A–C#. A forma **9–7–10–11** de Bm9 contém B–D–A–C#, sem a quinta F#. Ambas têm testes próprios. Na ordem de partida, formas com fundamental presente vêm antes das alternativas sem fundamental; o modo de registro permanece independente desse agrupamento.
