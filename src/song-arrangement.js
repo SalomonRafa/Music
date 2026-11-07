@@ -1,6 +1,7 @@
-import {findVoicings,parseChord} from './chords.js?v=0.13.0';
-import {preferenceKey,selectPrimary,browserPrimary} from './shape-priority.js?v=0.13.0';
-export function extractSongChords(text){const symbols=[];const add=s=>{if(!symbols.includes(s))symbols.push(s);};for(const line of text.split('\n')){if(/^\s*\{.*\}\s*$/.test(line))continue;const brackets=[...line.matchAll(/\[([^\]]+)\]/g)];if(brackets.length){brackets.forEach(m=>add(m[1]));continue;}const tokens=line.trim().split(/\s+/).filter(Boolean);const chordLike=t=>!!parseChord(t)||/^[A-G][#b]?(?:(?:m|maj|M|dim|aug|sus|add|no|omit|alt)|[0-9#b+(),/°øΔ-])+(?:\/[A-G][#b]?)?$/.test(t);if(tokens.length&&tokens.every(t=>chordLike(t)||/^[|:%\-]+$/.test(t)))tokens.filter(t=>!/^[|:%\-]+$/.test(t)).forEach(add);}return symbols;}
+import {extractChartChords} from './chart-parser.js?v=0.14.0';
+import {findVoicings,parseChord} from './chords.js?v=0.14.0';
+import {preferenceKey,selectPrimary,browserPrimary} from './shape-priority.js?v=0.14.0';
+export const extractSongChords=extractChartChords;
 export function songShapeKey(symbol,steps=0){const chord=parseChord(symbol);return chord?`${steps}:${preferenceKey(chord)}`:null;}
 export function resolveSongShape(symbol,arrangement={},steps=0){const data=findVoicings(symbol),key=songShapeKey(symbol,steps),saved=arrangement.shapes?.[key];const selected=selectPrimary(data.chord,data.results,saved||browserPrimary(data.chord));return {data,key,shape:selected?.shape||null,explicit:!!saved&&!!selected&&selected.type==='personal'};}
 export function proposeArrangement(symbols,style='low'){

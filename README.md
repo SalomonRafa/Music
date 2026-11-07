@@ -61,3 +61,13 @@ A grafia brasileira `G#7(4/9)` é interpretada como G#9sus4, com quarta e nona e
 As posições e a transposição ficam em `arrangement` em cada registro do armazenamento `mestre-songbook-v1`. Escolhas de formas em músicas já salvas são persistidas automaticamente; alterações no texto precisam de **Salvar cifra**. Para material ainda não salvo, as escolhas são mantidas na tela até salvar. **Baixar cifra com arranjo** gera backup JSON importável, contendo título, texto e escolhas; a exportação TXT mantém o texto original. O PDF continua sendo apenas referência visual.
 
 Validação de navegador: `python test/song_arrangement_browser.py` (Playwright Python e Chromium; servidor ativo; `APP_URL` opcional). Abrange cifra antiga, clique/desenho, escolha por música, recarga, prévia/aplicar/desfazer, preservação do texto, transposição independente, backup e importação, além de dimensões móveis. A cifra pessoal completa não está disponível no servidor: o botão analisa o texto salvo no navegador do aluno.
+
+## Acordes clicáveis durante a rolagem · 0.14.0
+
+O leitor e o extrator de acordes passam a compartilhar `chart-parser.js`. O reconhecimento é por símbolo: barras/compassos, rótulos como Intro, repetições, acordes colados e um símbolo desconhecido não desativam os acordes válidos da linha. Símbolos com aparência de acorde que ainda não são interpretados aparecem sinalizados e abrem a explicação. Letras e artigos isolados A/E em frases não são transformados em acordes; para acordes inseridos na própria letra, ChordPro é a marcação inequívoca.
+
+O desenho permanece em um painel ao lado da cifra no desktop e acima da área de rolagem no celular. Não fecha ao rolar nem cobre os demais símbolos. Cada ocorrência pode atualizar o painel, com destaque no acorde selecionado. ChordPro usa células de acorde e texto para evitar sobreposição de botões. O conteúdo original da cifra é preservado.
+
+Teste adicional: `python test/chart_interaction_browser.py`, com servidor iniciado e `APP_URL` opcional. Verifica 60 cliques em ocorrências durante rolagem, símbolos separados por barras, repetição, símbolo desconhecido, acordes colados, ChordPro e toque móvel. O teste de arranjo continua verificando escolhas por música, persistência e backup.
+
+Referência de ligação conferida para o trecho apresentado pelo aluno: Cm7 **5–3–1–1** (G–Bb–C–Eb) → Fm7 **3–1–1–1** (F–Ab–C–Eb), mantendo C5 e Eb5. Não constitui validação da cifra inteira ou da melodia; é uma alternativa de disposição de vozes, sem mudar a harmonia.

@@ -1,9 +1,9 @@
-import {selectPrimary,readPrimary,savePrimary,browserPrimary} from './shape-priority.js?v=0.13.0';
-import {QUALITY_GROUPS,qualityLabel,midiNote,shapeMetrics,sortShapes,notationHint} from './chord-presentation.js?v=0.13.0';
-import {planFingering} from './fingering.js?v=0.13.0';
-import {STRINGS,MAX_FRET} from './instrument.js?v=0.13.0';
+import {selectPrimary,readPrimary,savePrimary,browserPrimary} from './shape-priority.js?v=0.14.0';
+import {QUALITY_GROUPS,qualityLabel,midiNote,shapeMetrics,sortShapes,notationHint} from './chord-presentation.js?v=0.14.0';
+import {planFingering} from './fingering.js?v=0.14.0';
+import {STRINGS,MAX_FRET} from './instrument.js?v=0.14.0';
 export const tuning=STRINGS.map(s=>s.midi); // 4ª → 1ª: D4 G4 B4 D5
-import {names,qualities,parseChord,transposeChord} from './harmony.js?v=0.13.0';
+import {names,qualities,parseChord,transposeChord} from './harmony.js?v=0.14.0';
 export {names,qualities,parseChord,transposeChord};
 export function findVoicings(symbol,settings={}){
  const chord=parseChord(symbol);if(!chord)return {chord:null,results:[],omitted:[],reason:'Símbolo não reconhecido. Confira a grafia ou use um dos exemplos.'};
