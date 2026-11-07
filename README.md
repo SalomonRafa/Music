@@ -49,3 +49,15 @@ export function mountChords(){const $=id=>document.getElementById(id);let symbol
  $('chord-results').onclick=e=>{const action=handlePrimaryButton(e,$('chord-results'));if(action){if(action.saved)run();return;}const example=e.target.closest('[data-chord-example]');if(example){$('chord-symbol').value=example.dataset.chordExample;run();return;}const b=e.target.closest('[data-chord-page]');if(b)$('chord-results').innerHTML=chordCards(symbol,{...current,offset:Number(b.dataset.chordPage)});};
  document.querySelectorAll('[data-chord-example]').forEach(b=>b.onclick=()=>{$('chord-symbol').value=b.dataset.chordExample;run();});
 }
+
+## Cifra com desenhos e arranjo por música · 0.13.0
+
+No Repertório, clicar em um acorde abre um desenho junto ao trecho, inclusive em celular, com botão para escolher outra posição. Uma faixa de desenhos mostra as posições usadas na música. **Usar esta forma na música** salva a escolha somente no arranjo daquela cifra, sem alterar a principal global nem outras músicas. Grafias equivalentes compartilham a mesma escolha; transposições têm escolhas separadas. Cifras antigas sem metadados continuam sendo carregadas.
+
+**Preparar formas para cavaquinho** gera uma prévia de posições no instrumento de 12 trastes, com prioridade para registro mais grave/trocas próximas ou menor exigência de dedos. A seleção considera as primeiras aparições dos acordes e um conjunto de candidatos; é uma sugestão determinística, não interpretação de áudio nem garantia de arranjo musical ótimo. Prefere fundamental presente quando disponível. As omissões e os símbolos sem posição reconhecida ficam explícitos. Só após **Aplicar estas formas** as escolhas são registradas, com opção de desfazer. Símbolos harmônicos e texto original são preservados; mudar o tom pela transposição continua sendo uma decisão separada, especialmente para canto.
+
+A grafia brasileira `G#7(4/9)` é interpretada como G#9sus4, com quarta e nona e sem terça. Zero semitons mantém a grafia original, sem trocar G# por Ab na leitura.
+
+As posições e a transposição ficam em `arrangement` em cada registro do armazenamento `mestre-songbook-v1`. Escolhas de formas em músicas já salvas são persistidas automaticamente; alterações no texto precisam de **Salvar cifra**. Para material ainda não salvo, as escolhas são mantidas na tela até salvar. **Baixar cifra com arranjo** gera backup JSON importável, contendo título, texto e escolhas; a exportação TXT mantém o texto original. O PDF continua sendo apenas referência visual.
+
+Validação de navegador: `python test/song_arrangement_browser.py` (Playwright Python e Chromium; servidor ativo; `APP_URL` opcional). Abrange cifra antiga, clique/desenho, escolha por música, recarga, prévia/aplicar/desfazer, preservação do texto, transposição independente, backup e importação, além de dimensões móveis. A cifra pessoal completa não está disponível no servidor: o botão analisa o texto salvo no navegador do aluno.

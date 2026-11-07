@@ -9,7 +9,7 @@ const baseDegrees={1:0,2:2,3:4,4:5,5:7,6:9,7:10,9:14,11:17,13:21};
 function spell(root,degree,interval){const letters='CDEFGAB',letter=letters[(letters.indexOf(root[0])+degree-1)%7],target=(pc(root)+interval)%12,natural=pc(letter);let delta=(target-natural+12)%12;if(delta>6)delta-=12;return Math.abs(delta)<=2?letter+(delta>0?'#'.repeat(delta):'b'.repeat(-delta)):names[target];}
 export function parseChord(input){
  const symbol=normalize(input);if(symbol.length>80)return null;
- const m=/^([A-G](?:bb|##|x|b|#)?)(.*?)(?:\/([A-G](?:bb|##|x|b|#)?))?$/.exec(symbol);if(!m)return null;const rootName=m[1];let tail=m[2];if(/^7\(4\)$/.test(tail))tail='7sus4';if(tail==='4')tail='sus4';
+ const m=/^([A-G](?:bb|##|x|b|#)?)(.*?)(?:\/([A-G](?:bb|##|x|b|#)?))?$/.exec(symbol);if(!m)return null;const rootName=m[1];let tail=m[2];tail=tail.replace(/^7\(4[\/,]9\)$/,'9sus4').replace(/^7\(4[\/,]13\)$/,'7sus4(13)');if(/^7\(4\)$/.test(tail))tail='7sus4';if(tail==='4')tail='sus4';
  if((tail.match(/\(/g)||[]).length!==(tail.match(/\)/g)||[]).length)return null;
  tail=tail.replace(/\(([^()]*)\)/g,'$1');if(/[()]/.test(tail))return null;
  tail=tail.replace(/^(?:7M|7\+|M7|Δ7|Δ)/,'maj7').replace(/^m(?:7M|M7|Maj7|maj7)/,'mmaj7').replace(/^min/,'m').replace(/^-/,'m').replace(/^ø7?/,'m7b5').replace(/^°7/,'dim7').replace(/^°/,'dim').replace(/^\+/,'aug');
@@ -36,4 +36,4 @@ export function parseChord(input){
  const bass=m[3]?pc(m[3]):null;
  return {symbol,rootName,root:pc(rootName),quality,bass,bassName:m[3]||null,tones:tones.map(t=>({...t,label:(()=>{const delta=t.interval-(t.degree===7?11:baseDegrees[t.degree]);return (delta<0?'b'.repeat(-delta):'#'.repeat(delta))+t.degree;})(),note:spell(rootName,t.degree,t.interval),pc:(pc(rootName)+t.interval)%12})),intervals:tones.map(t=>t.interval),canonical:rootName+quality+(m[3]?'/'+m[3]:''),aliases:quality==='sus4'?[rootName+'sus',rootName+'sus4']:quality==='7sus4'?[rootName+'7sus',rootName+'7sus4']:quality==='9'?[rootName+'9',rootName+'7(9)']:quality==='maj9'?[rootName+'maj9',rootName+'7M(9)']:[]};
 }
-export function transposeChord(symbol,steps){const normalized=normalize(symbol),m=/^([A-G](?:bb|##|x|b|#)?)(.*?)(?:\/([A-G](?:bb|##|x|b|#)?))?$/.exec(normalized);if(!m)return symbol;const shift=s=>names[((pc(s)+steps)%12+12)%12];return shift(m[1])+m[2]+(m[3]?'/'+shift(m[3]):'');}
+export function transposeChord(symbol,steps){const normalized=normalize(symbol),m=/^([A-G](?:bb|##|x|b|#)?)(.*?)(?:\/([A-G](?:bb|##|x|b|#)?))?$/.exec(normalized);if(!m)return symbol;if(Number(steps)%12===0)return normalized;const shift=s=>names[((pc(s)+steps)%12+12)%12];return shift(m[1])+m[2]+(m[3]?'/'+shift(m[3]):'');}

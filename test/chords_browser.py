@@ -3,7 +3,7 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.12.0');page.get_by_role('button',name='Acordes',exact=True).click()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.13.0');page.get_by_role('button',name='Acordes',exact=True).click()
  assert page.locator('#chord-max').input_value()=='12'
  assert page.locator('#chord-max').get_attribute('max')=='12'
  page.locator('summary').click()
@@ -82,7 +82,7 @@ with sync_playwright() as p:
  page.locator('#chord-order').select_option('simple')
  assert '4–2–0–0' in page.locator('.chord-shape').first.inner_text()
  page.locator('#chord-symbol').fill('inexistente');page.get_by_role('button',name='Consultar acorde',exact=True).click();assert 'Símbolo não reconhecido' in page.locator('#chord-results').inner_text()
- page.get_by_role('button',name='Repertório',exact=True).click();page.locator('#song-source').fill('A7(9)  Bm7(b5)');page.locator('#preview-chart').click();page.locator('[data-lookup="A7(9)"]').click();assert 'A9' in page.locator('#lookup-area').inner_text()
+ page.get_by_role('button',name='Repertório',exact=True).click();page.locator('#song-source').fill('A7(9)  Bm7(b5)');page.locator('#preview-chart').click();page.locator('#chart [data-lookup="A7(9)"]').click();page.locator('#choose-song-shape').click();assert 'A9' in page.locator('#lookup-area').inner_text()
  assert page.locator('#lookup-area .chord-shape').count()>0
  if page.locator('#lookup-area [data-chord-page="12"]').count():
   page.locator('#lookup-area [data-chord-page="12"]').click()
