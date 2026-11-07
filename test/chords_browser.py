@@ -3,7 +3,7 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.10.0');page.get_by_role('button',name='Acordes',exact=True).click()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.11.0');page.get_by_role('button',name='Acordes',exact=True).click()
  assert page.locator('#chord-max').input_value()=='12'
  assert page.locator('#chord-max').get_attribute('max')=='12'
  page.locator('summary').click()
@@ -18,6 +18,18 @@ with sync_playwright() as p:
  page.locator('#chord-root').select_option('F#');assert page.locator('#chord-symbol').input_value()=='F#sus4'
  page.locator('#chord-quality').select_option('sus2');assert page.locator('#chord-symbol').input_value()=='F#sus2'
  assert page.locator('.chord-shape').count()>0
+ page.locator('#chord-symbol').fill('C7M(b5)');page.get_by_role('button',name='Consultar acorde',exact=True).click()
+ assert page.locator('#chord-quality').input_value()=='maj7b5'
+ c=page.locator('.chord-shape').filter(has_text='4–4–5–4')
+ assert 'Omitidas: C (1)' in c.inner_text()
+ assert c.locator('.chord-barre[data-fret="4"]').count()==1
+ assert c.locator('.chord-note-label').all_text_contents()==['1','1','2','1']
+ page.locator('#chord-root-presence').select_option('absent')
+ assert all('Omitidas: C (1)' in text for text in page.locator('.chord-shape').all_text_contents())
+ page.locator('#chord-root-presence').select_option('present')
+ assert page.locator('.chord-shape').filter(has_text='4–4–5–4').count()==0
+ assert all('Todas as notas da fórmula presentes' in text for text in page.locator('.chord-shape').all_text_contents())
+ page.locator('#chord-root-presence').select_option('all')
  page.locator('#chord-symbol').fill('C7(13)');page.get_by_role('button',name='Consultar acorde',exact=True).click()
  assert '5–3–5–7' in page.locator('#chord-results').inner_text()
  source=page.locator('.chord-shape').filter(has_text='5–3–5–7')

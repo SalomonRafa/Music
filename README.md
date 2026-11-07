@@ -79,3 +79,11 @@ A referência enviada para **Em7(9)** é **2–0–3–4**: E–G–D–F#, sem 
 O grupo **Suspensos · sus = sus4** reúne sus2, sus4, 7sus2, 7sus4, 9sus4 e 13sus4 em todas as 12 fundamentais. Grafias sem número como Asus e A7sus são aliases de Asus4 e A7sus4. A busca sugere também essas grafias; cifras importadas usam o mesmo interpretador.
 
 Em sus4, a terça é substituída pela quarta; em sus2, pela segunda. A extensão não deve reintroduzir uma terça nem permitir que a suspensão seja omitida. Isso é testado em todos os resultados e fundamentais. A forma de referência **Asus = 2–2–3–2** contém E–A–D–E, com pestana na 2ª casa e sugestão de dedos 1–1–2–1. O limite do instrumento continua em 12 trastes.
+
+## Sétima maior com quinta alterada · 0.11.0
+
+C7M(b5) é interpretado e catalogado como **Cmaj7b5**, C–E–Gb–B. É diferente de C7(b5), que contém Bb, e de Cmaj7(#11), cuja fórmula mantém G e adiciona F#. As posições podem coincidir parcialmente quando há omissões; as fórmulas não são tratadas como sinônimos.
+
+A forma da referência **4–4–5–4** toca Gb–B–E–Gb, com pestana na 4ª casa e dedos sugeridos 1–1–2–1. Ela omite C e precisa do contexto harmônico para ser entendida como Cmaj7b5. O gerador anterior só omitia notas quando a fórmula ultrapassava quatro alturas e, por isso, não encontrava essa forma.
+
+Voicings sem fundamental agora são considerados também para acordes de sétima com quatro alturas, sempre com a opção correspondente ativa e a omissão explicitada por cartão. O seletor **Presença da fundamental** permite consultar todas, só as completas quanto à fundamental ou só as rootless. Isso não implica que toda posição gerada tenha uso comum documentado: a referência enviada é conferida pelas suas notas; as demais são candidatas calculadas. O limite do instrumento permanece em 12 trastes.
