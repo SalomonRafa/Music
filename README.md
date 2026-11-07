@@ -17,7 +17,7 @@ Servidor na porta 3000 em todas as interfaces; `PORT` altera a porta. No GitHub 
 - Áudio: gravação e download, reprodução, importação com velocidade e repetição integral. Microfone compartilhado entre gravador e afinador. Use **Desligar microfone** ou saia da seção para liberar a entrada.
 - Afinador cromático ou de cordas soltas de cavaquinho. Referências **D4–G4–B4–D5**, da 4ª à 1ª; veja [fontes e correção das versões anteriores](MUSIC_SOURCES.md). Perfil com o padrão incorreto antigo é migrado sem apagar sessões.
 - Identificação experimental de tríades maiores/menores, sem avaliação de técnica.
-- Dicionário com interpretação de cifras, posições calculadas, inversões e diagramas. Casas 0–19 por padrão (configuráveis até 24), extensão de mão ajustável, cordas abafadas opcionais e omissões explícitas para acordes com mais de quatro notas. Exige conferência de conforto por professor.
+- Dicionário com interpretação de cifras, posições calculadas, inversões e diagramas. Instrumento de Rafael com 12 trastes, conforme informação explícita: todas as buscas limitadas às casas 0–12, extensão de mão ajustável, cordas abafadas opcionais e omissões explícitas para acordes com mais de quatro notas. Exige conferência de conforto por professor.
 - Repertório: TXT e ChordPro, edição, transposição ±12 semitons, consulta de acordes, biblioteca local, exportação e rolagem. PDF até 10 MB apenas para consulta visual, sem reconhecimento de notas. Texto limitado a 1 MB e 100 mil caracteres.
 
 ## Afinador 0.5.0
@@ -51,3 +51,15 @@ A representação e a ordenação foram revistas de forma geral. O modelo de dig
 Por padrão, círculos mostram **dedos sugeridos (1–4)**; a barra mostra a pestana. O seletor permite voltar aos números das casas. A casa inicial fica à esquerda, e a sequência **Casas**, da 4ª à 1ª, permanece explícita em ambos os modos. Isso também vale para os diagramas consultados dentro do repertório.
 
 Regressão de referência: **Am7, casas 7–5–5–5**, produz A–C–E–G. A sugestão é pestana na casa 5 e dedo 3 na casa 7 da 4ª corda. Essa posição já era gerada na versão anterior, mas não tinha a pestana desenhada e aparecia depois da inversão 5–5–5–7. A auditoria percorre todas as 12 fundamentais e famílias do catálogo, conferindo contatos, notas e pestanas. Não se rotulam resultados como “mais usados” sem referência musical independente.
+
+## Organização 0.8.0
+
+A pesquisa exibe o símbolo canônico, a família por extenso e as notas com grafia harmônica (por exemplo, D# em Bmaj7). **Bm7** é B–D–F#–A; **BM7** é uma grafia de Bmaj7, B–D#–F#–A#. A entrada desabilita capitalização automática e a segunda grafia recebe uma explicação e botão para consultar Bm7, sem converter silenciosamente um acorde em outro.
+
+A forma aberta de Bm7 **4–2–0–0** aparece primeiro na ordenação simples, com dois dedos. A ordenação considera simplicidade antes da fundamental no grave. “Forma simples” tem critério explícito: até dois contatos de dedos, nenhuma corda abafada, abertura até três casas. Isso não equivale a afirmar tradição ou conforto revisado por professor.
+
+Há seletores de **mais grave** e **mais agudo**. Usam a nota mais aguda da posição e a altura média para desempate, não apenas o número da casa. Cada posição exibe intervalo de registro com oitavas, cordas soltas/pestana, dedos, notas e estado fundamental/inversão. O acorde permanece o mesmo: muda a disposição das vozes, não sua tonalidade.
+
+As famílias estão agrupadas em tríades/suspensos, sétimas, sextas/notas adicionadas, extensões e alterados. Há consulta explícita para m7(11), maj7(#11), 7(b9,#11), 7(#9,b13) e 13(b9), além das fórmulas já interpretadas. Combinações que não cabem nas quatro cordas recebem explicação e opções de omissão, não notas inventadas. Posições passam a uma grade responsiva para evitar esconder todas as variantes em uma faixa horizontal.
+
+O usuário confirmou que **seu instrumento tem 12 trastes**. Esse limite está em `src/instrument.js` e é aplicado no gerador, nos campos de filtro e nas consultas dentro do repertório. Mesmo uma chamada com `maxFret: 24` é limitada a 12 para este instrumento. A configuração não pretende descrever todos os cavaquinhos existentes. Não são geradas posições na 14ª ou 16ª casa.
