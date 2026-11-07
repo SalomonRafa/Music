@@ -71,3 +71,7 @@ O desenho permanece em um painel ao lado da cifra no desktop e acima da área de
 Teste adicional: `python test/chart_interaction_browser.py`, com servidor iniciado e `APP_URL` opcional. Verifica 60 cliques em ocorrências durante rolagem, símbolos separados por barras, repetição, símbolo desconhecido, acordes colados, ChordPro e toque móvel. O teste de arranjo continua verificando escolhas por música, persistência e backup.
 
 Referência de ligação conferida para o trecho apresentado pelo aluno: Cm7 **5–3–1–1** (G–Bb–C–Eb) → Fm7 **3–1–1–1** (F–Ab–C–Eb), mantendo C5 e Eb5. Não constitui validação da cifra inteira ou da melodia; é uma alternativa de disposição de vozes, sem mudar a harmonia.
+
+### 0.14.1 — Atualização da cifra enviada
+
+Ao iniciar, uma migração local compara SHA-256 do texto normalizado com a cifra fornecida pelo usuário. Somente a correspondência exata recebe a introdução instrumental proposta em Lá (A–C#m7–Bm7–C#m7–D7M), sem transcrever áudio ou presumir o último símbolo ilegível da imagem. O texto anterior permanece após o trecho. ID, título, escolhas de posições e outras músicas são preservados. A cópia integral anterior é gravada antes da atualização em `mestre-song-backup-ainda-bem-v1`; o repertório oferece restauração. A marca persistente impede reaplicação, inclusive após restauração. Se houver edição divergente, armazenamento indisponível ou mudança durante o cálculo do hash, não altera o texto. A letra enviada não é distribuída no código: somente seu hash e a proposta instrumental.

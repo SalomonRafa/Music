@@ -3,7 +3,7 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.14.0');page.get_by_role('button',name='Acordes',exact=True).click()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.14.1');page.get_by_role('button',name='Acordes',exact=True).click()
  assert page.locator('#chord-max').input_value()=='12'
  assert page.locator('#chord-max').get_attribute('max')=='12'
  page.locator('summary').click()
