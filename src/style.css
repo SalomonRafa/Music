@@ -13,3 +13,5 @@
 .check-label{display:flex;align-items:center;gap:10px;margin-top:15px}.check-label input{width:auto}.chord-examples{gap:6px}.chord-examples button{padding:8px 11px}.voicings{scroll-snap-type:x proximity}.chord-shape{scroll-snap-align:start}details summary{cursor:pointer;font-size:13px;color:#526b42}#chord-symbol{font-size:18px}
 
 .voicings{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));overflow:visible;align-items:start}.chord-shape{min-width:0}.shape-category{font-size:11px;line-height:1.5;margin:8px 0;color:#657b57}.chord-identity{font-size:17px;color:#294c35}.chord-identity strong{font-size:25px}.voicings svg{max-width:100%}
+
+.primary-section{margin:22px 0;padding:22px;background:#f0f5e9;border:1px solid #c9d9b8;border-radius:12px}.primary-section>p{max-width:700px}.primary-shape{max-width:360px;background:#fff;border-color:#b6ca9d}.variations-section{margin-top:28px}.variations-section>h2{margin-bottom:10px}.primary-shape .actions{justify-content:center}.primary-save-status{color:#97613d}
