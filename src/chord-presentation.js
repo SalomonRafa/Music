@@ -1,4 +1,4 @@
-import {qualities} from './harmony.js?v=0.16.1';
+import {qualities} from './harmony.js?v=0.17.0';
 const GROUPS=[['Tríades e suspensos',['','m','dim','aug','5']],['Suspensos · sus = sus4',['sus2','sus4','7sus2','7sus4','9sus4','13sus4']],['Sétimas',['7','maj7','m7','dim7','m7b5','mMaj7']],['Sextas e notas adicionadas',['6','m6','add9','madd9','6/9','m6/9']],['Extensões · 9ª, 11ª e 13ª',['9','maj9','m9','11','maj11','m11','13','7(13)','maj13','m13','m7(11)']],['Alterados',['maj7b5','maj7#5','7b5','7#5','7(b9)','7(#9)','7(#11)','7(b13)','9(#11)','7(b9,b13)','maj7(#11)','7(b9,#11)','7(#9,b13)','13(b9)']]];
 export const QUALITY_GROUPS=GROUPS.map(([label,keys])=>({label,keys}));
 export function qualityLabel(chord){return qualities[chord.quality]?.label||'Combinação de extensões e alterações';}
@@ -10,3 +10,20 @@ export function shapeMetrics(frets,tuning,plan){const midi=frets.flatMap((f,i)=>
  return {midi,low:Math.min(...midi),high:Math.max(...midi),mean:midi.reduce((a,b)=>a+b,0)/midi.length,type,open,muted,spread,difficulty,region:Math.floor(Math.max(...frets)/5),simple:plan.fingerCount<=2&&muted===0&&spread<=2};}
 export function sortShapes(results,order='simple'){return results.sort((a,b)=>{if(order==='low')return a.metrics.high-b.metrics.high||a.metrics.mean-b.metrics.mean||a.metrics.difficulty-b.metrics.difficulty;if(order==='high')return b.metrics.high-a.metrics.high||b.metrics.mean-a.metrics.mean||a.metrics.difficulty-b.metrics.difficulty;return Number(a.omitted?.some(t=>t.degree===1))-Number(b.omitted?.some(t=>t.degree===1))||a.omitted.length-b.omitted.length||a.metrics.muted-b.metrics.muted||a.metrics.difficulty-b.metrics.difficulty||a.metrics.high-b.metrics.high||a.metrics.mean-b.metrics.mean||a.frets.join().localeCompare(b.frets.join());});}
 export function notationHint(input){const m=/^([A-G](?:#|b)?)(?:M7|7M|maj7)$/.exec(input.trim());return m?{minor:m[1]+'m7',major:m[1]+'maj7',message:`${input.trim()} é maior com sétima maior. Para menor com sétima, use ${m[1]}m7 (m minúsculo).`}:null;}
+
+// Study is a choice of a few useful shapes, not a count of every valid tuple.
+export function studyCandidates(results){
+ if(!results.length)return [];
+ const four=results.filter(v=>v.frets.every(f=>f>=0));
+ const pool=four.length?four:results;
+ const omitted=Math.min(...pool.map(v=>v.omitted.length));
+ return pool.filter(v=>v.omitted.length===omitted);
+}
+export function selectStudyShapes(results,primary,limit=4){
+ if(!primary)return [];
+ const pool=studyCandidates(results),chosen=[primary];
+ const signature=v=>{const pressed=v.frets.filter(f=>f>0),region=Math.floor((pressed.length?Math.min(...pressed):0)/3);return region+':'+(v.omitted.some(t=>t.degree===1)?'rootless':'rooted');};
+ const seen=new Set([signature(primary)]);
+ for(const v of pool){if(chosen.length>=limit)break;if(v===primary||seen.has(signature(v)))continue;chosen.push(v);seen.add(signature(v));}
+ return chosen;
+}

@@ -26,7 +26,7 @@ with sync_playwright() as p:
  assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
  page.locator('.chord-position-grid').screenshot(path='/tmp/acordes-compactos-mobile.png')
  page.locator('#chord-symbol').fill('C7');page.get_by_role('button',name='Consultar acorde',exact=True).click()
- page.get_by_role('button',name='Mostrar todas as',exact=False).click()
+ page.locator('#chord-position').fill('2–3–1–2');page.get_by_role('button',name='Consultar acorde',exact=True).click()
  card=page.locator('[data-shape="2,3,1,2"]');assert 'Omitidas: G (5)' in card.inner_text()
  assert not errors,errors
  b.close()

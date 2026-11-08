@@ -42,9 +42,9 @@ test('Ponta de dor: todas as cifras do print reconhecidas, inclusive Fm7M',()=>{
  for(const symbol of ['Fm','Fm7M','Fm7','F7','Bbm','Eb7','Ab','Db','Gm7(b5)','C7']){const r=findVoicings(symbol);assert.ok(r.chord&&r.results.length,symbol);}
  assert.deepEqual(parseChord('Fm7M').tones.map(t=>t.note),['F','Ab','C','E']);
 });
-test('ajuda longa recolhida e opção de mostrar todas as variações',()=>{
+test('ajuda longa recolhida e sem botão para despejar todas as combinações',()=>{
  const page=chordsPage();assert.ok(!page.includes('Seu cavaquinho: 12 trastes'));assert.match(page,/<details class="chord-help"><summary>Como ler/);assert.ok(!page.includes('<details class="chord-help" open'));
- assert.match(chordCards('C7'),/Mostrar todas as/);
+ assert.ok(!chordCards('C7').includes('Mostrar todas as'));assert.ok((chordCards('C7').match(/data-shape=/g)||[]).length<=4);
 });
 
 test('print aos 0:17 indica Bbm6, que contém Sol e não se confunde com Bbm',()=>{

@@ -3,10 +3,10 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.16.1');page.get_by_role('button',name='Acordes',exact=True).click()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.17.0');page.get_by_role('button',name='Acordes',exact=True).click()
  assert page.locator('#chord-max').input_value()=='12'
  assert page.locator('#chord-max').get_attribute('max')=='12'
- page.get_by_text('Filtros de posições e omissões',exact=True).click()
+ page.get_by_text('Busca avançada e filtros',exact=True).click()
  assert page.locator('#chord-span').input_value()=='5'
  assert page.locator('#chord-rootless').is_checked()
  page.locator('#chord-symbol').fill('Asus');page.get_by_role('button',name='Consultar acorde',exact=True).click()

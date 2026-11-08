@@ -18,12 +18,14 @@ with sync_playwright() as p:
  assert page.locator('.primary-shape').get_attribute('data-shape')=='8,6,6,8'
  page.locator('#chord-reset-filters').click()
  lookup('C7')
- count=page.locator('.chord-shape').count()
- page.get_by_role('button',name='Mostrar todas as',exact=False).click()
+ count=page.locator('.chord-shape').count();assert count<=4
+ page.get_by_text('Busca avançada e filtros',exact=True).click()
+ page.locator('#chord-explore').check()
  assert page.locator('.chord-shape').count()>count
+ page.locator('#chord-position').fill('2–3–1–2');page.get_by_role('button',name='Consultar acorde',exact=True).click()
  card=page.locator('[data-shape="2,3,1,2"]');assert card.count()==1
  assert 'Omitidas: G (5)' in card.inner_text()
- page.get_by_text('Filtros de posições e omissões',exact=True).click()
+ page.locator('#chord-position').fill('')
  page.locator('#chord-mute').uncheck();page.locator('#chord-max').fill('2')
  page.get_by_role('button',name='Consultar acorde',exact=True).click()
  page.locator('#chord-reset-filters').click()
@@ -37,4 +39,4 @@ with sync_playwright() as p:
  page.screenshot(path='/tmp/dicionario-revisado-mobile.png',full_page=True)
  assert not errors,errors
  b.close()
- print('PASS: Bbm em duas regiões, busca por casas, todas as variações, quinta omitida explícita, restauração de filtros, cifras do print, ajuda recolhida e tela móvel.')
+ print('PASS: Bbm em duas regiões, busca por casas, exploração avançada, quinta omitida explícita, restauração de filtros, cifras do print, ajuda recolhida e tela móvel.')
