@@ -1,0 +1,978 @@
+{
+  "date": "2026-11-08",
+  "scope": "Formula comparison only; does not validate cavaquinho fingerings or ergonomics.",
+  "source": {
+    "url": "https://github.com/tonaljs/tonal/blob/main/packages/chord-type/data.ts",
+    "sha256": "daf18640a75f600e392bc8be32a144fa3528f1b2f5ce7fddb61d4dab941ef778",
+    "consulted": "2026-11-08"
+  },
+  "entries": [
+    {
+      "quality": "5",
+      "label": "Fundamental e quinta",
+      "intervals": [
+        0,
+        7
+      ],
+      "comparisonAlias": "5",
+      "externalIntervals": [
+        0,
+        7
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "6",
+      "label": "Maior com 6ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        9
+      ],
+      "comparisonAlias": "6",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        9
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7",
+      "label": "Dominante com 7ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "comparisonAlias": "7",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "9",
+      "label": "Dominante com 9ª · 7(9)",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        14
+      ],
+      "comparisonAlias": "9",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "11",
+      "label": "Dominante com 11ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        14,
+        17
+      ],
+      "comparisonAlias": "11",
+      "externalIntervals": [
+        0,
+        7,
+        10,
+        14,
+        17
+      ],
+      "status": "different_convention",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "13",
+      "label": "Dominante com 13ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        14,
+        17,
+        21
+      ],
+      "comparisonAlias": "13",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        14,
+        21
+      ],
+      "status": "different_convention",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "",
+      "label": "Maior",
+      "intervals": [
+        0,
+        4,
+        7
+      ],
+      "comparisonAlias": "M",
+      "externalIntervals": [
+        0,
+        4,
+        7
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m",
+      "label": "Menor",
+      "intervals": [
+        0,
+        3,
+        7
+      ],
+      "comparisonAlias": "m",
+      "externalIntervals": [
+        0,
+        3,
+        7
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "maj7",
+      "label": "Maior com 7ª maior",
+      "intervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "comparisonAlias": "maj7",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m7",
+      "label": "Menor com 7ª",
+      "intervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "comparisonAlias": "m7",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m6",
+      "label": "Menor com 6ª",
+      "intervals": [
+        0,
+        3,
+        7,
+        9
+      ],
+      "comparisonAlias": "m6",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        9
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "dim",
+      "label": "Diminuto",
+      "intervals": [
+        0,
+        3,
+        6
+      ],
+      "comparisonAlias": "dim",
+      "externalIntervals": [
+        0,
+        3,
+        6
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "dim7",
+      "label": "Diminuto com 7ª",
+      "intervals": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "comparisonAlias": "dim7",
+      "externalIntervals": [
+        0,
+        3,
+        6,
+        9
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m7b5",
+      "label": "Meio-diminuto",
+      "intervals": [
+        0,
+        3,
+        6,
+        10
+      ],
+      "comparisonAlias": "m7b5",
+      "externalIntervals": [
+        0,
+        3,
+        6,
+        10
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "aug",
+      "label": "Aumentado",
+      "intervals": [
+        0,
+        4,
+        8
+      ],
+      "comparisonAlias": "aug",
+      "externalIntervals": [
+        0,
+        4,
+        8
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "sus2",
+      "label": "Suspenso com 2ª",
+      "intervals": [
+        0,
+        2,
+        7
+      ],
+      "comparisonAlias": "sus2",
+      "externalIntervals": [
+        0,
+        2,
+        7
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "sus4",
+      "label": "Suspenso com 4ª",
+      "intervals": [
+        0,
+        5,
+        7
+      ],
+      "comparisonAlias": "sus4",
+      "externalIntervals": [
+        0,
+        5,
+        7
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7sus4",
+      "label": "7ª com 4ª suspensa",
+      "intervals": [
+        0,
+        5,
+        7,
+        10
+      ],
+      "comparisonAlias": "7sus4",
+      "externalIntervals": [
+        0,
+        5,
+        7,
+        10
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7sus2",
+      "label": "7ª com 2ª suspensa",
+      "intervals": [
+        0,
+        2,
+        7,
+        10
+      ],
+      "comparisonAlias": "7sus2",
+      "externalIntervals": null,
+      "status": "not_found",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "9sus4",
+      "label": "9ª com 4ª suspensa",
+      "intervals": [
+        0,
+        5,
+        7,
+        10,
+        14
+      ],
+      "comparisonAlias": "9sus4",
+      "externalIntervals": [
+        0,
+        5,
+        7,
+        10,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "13sus4",
+      "label": "13ª com 4ª suspensa",
+      "intervals": [
+        0,
+        5,
+        7,
+        10,
+        14,
+        21
+      ],
+      "comparisonAlias": "13sus4",
+      "externalIntervals": [
+        0,
+        5,
+        7,
+        10,
+        14,
+        21
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "add9",
+      "label": "Maior com 9ª adicionada",
+      "intervals": [
+        0,
+        4,
+        7,
+        14
+      ],
+      "comparisonAlias": "add9",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "madd9",
+      "label": "Menor com 9ª adicionada",
+      "intervals": [
+        0,
+        3,
+        7,
+        14
+      ],
+      "comparisonAlias": "madd9",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "mMaj7",
+      "label": "Menor com 7ª maior",
+      "intervals": [
+        0,
+        3,
+        7,
+        11
+      ],
+      "comparisonAlias": "mMaj7",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        11
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "maj7b5",
+      "label": "Maior com 7ª maior e 5ª diminuta · 7M(b5)",
+      "intervals": [
+        0,
+        4,
+        6,
+        11
+      ],
+      "comparisonAlias": "M7b5",
+      "externalIntervals": [
+        0,
+        4,
+        6,
+        11
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "maj7#5",
+      "label": "Maior com 7ª maior e 5ª aumentada",
+      "intervals": [
+        0,
+        4,
+        8,
+        11
+      ],
+      "comparisonAlias": "maj7#5",
+      "externalIntervals": [
+        0,
+        4,
+        8,
+        11
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7b5",
+      "label": "Dominante com 5ª diminuta",
+      "intervals": [
+        0,
+        4,
+        6,
+        10
+      ],
+      "comparisonAlias": "7b5",
+      "externalIntervals": [
+        0,
+        4,
+        6,
+        10
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7#5",
+      "label": "Dominante com 5ª aumentada",
+      "intervals": [
+        0,
+        4,
+        8,
+        10
+      ],
+      "comparisonAlias": "7#5",
+      "externalIntervals": [
+        0,
+        4,
+        8,
+        10
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "maj9",
+      "label": "Maior com 7ª maior e 9ª · 7M(9)",
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        14
+      ],
+      "comparisonAlias": "maj9",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        11,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m9",
+      "label": "Menor com 9ª · m7(9)",
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        14
+      ],
+      "comparisonAlias": "m9",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        10,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "maj11",
+      "label": "Maior com 11ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        14,
+        17
+      ],
+      "comparisonAlias": "maj11",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        11,
+        14,
+        17
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m11",
+      "label": "Menor com 11ª",
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        14,
+        17
+      ],
+      "comparisonAlias": "m11",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        10,
+        14,
+        17
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(13)",
+      "label": "Dominante com 7ª e 13ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        21
+      ],
+      "comparisonAlias": "7add13",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        21
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "maj13",
+      "label": "Maior com 13ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        14,
+        17,
+        21
+      ],
+      "comparisonAlias": "maj13",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        11,
+        14,
+        21
+      ],
+      "status": "different_convention",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m13",
+      "label": "Menor com 13ª",
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        14,
+        17,
+        21
+      ],
+      "comparisonAlias": "m13",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        10,
+        14,
+        21
+      ],
+      "status": "different_convention",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "6/9",
+      "label": "Maior com 6ª e 9ª",
+      "intervals": [
+        0,
+        4,
+        7,
+        9,
+        14
+      ],
+      "comparisonAlias": "6/9",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        9,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m6/9",
+      "label": "Menor com 6ª e 9ª",
+      "intervals": [
+        0,
+        3,
+        7,
+        9,
+        14
+      ],
+      "comparisonAlias": "m69",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        9,
+        14
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(b9)",
+      "label": "Dominante com 9ª menor",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        13
+      ],
+      "comparisonAlias": "7b9",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        13
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(#9)",
+      "label": "Dominante com 9ª aumentada",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        15
+      ],
+      "comparisonAlias": "7#9",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        15
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(#11)",
+      "label": "Dominante com 11ª aumentada",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        18
+      ],
+      "comparisonAlias": "7#11",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        18
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(b13)",
+      "label": "Dominante com 13ª menor",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        20
+      ],
+      "comparisonAlias": "7b13",
+      "externalIntervals": [
+        0,
+        4,
+        10,
+        20
+      ],
+      "status": "different_convention",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "9(#11)",
+      "label": "Nona com 11ª aumentada",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        14,
+        18
+      ],
+      "comparisonAlias": "9#11",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        14,
+        18
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(b9,b13)",
+      "label": "Dominante com 9ª e 13ª menores",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        13,
+        20
+      ],
+      "comparisonAlias": "7b9b13",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        13,
+        20
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "m7(11)",
+      "label": "Menor com 7ª e 11ª",
+      "intervals": [
+        0,
+        3,
+        7,
+        10,
+        17
+      ],
+      "comparisonAlias": "m7add11",
+      "externalIntervals": [
+        0,
+        3,
+        7,
+        10,
+        17
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "maj7(#11)",
+      "label": "Maior com 7ª maior e 11ª aumentada",
+      "intervals": [
+        0,
+        4,
+        7,
+        11,
+        18
+      ],
+      "comparisonAlias": "maj7#11",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        11,
+        18
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(b9,#11)",
+      "label": "Dominante com 9ª menor e 11ª aumentada",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        13,
+        18
+      ],
+      "comparisonAlias": "7b9#11",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        13,
+        18
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "7(#9,b13)",
+      "label": "Dominante com 9ª aumentada e 13ª menor",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        15,
+        20
+      ],
+      "comparisonAlias": "7#9b13",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        15,
+        20
+      ],
+      "status": "same_pitch_classes",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    },
+    {
+      "quality": "13(b9)",
+      "label": "Dominante com 13ª e 9ª menor",
+      "intervals": [
+        0,
+        4,
+        7,
+        10,
+        13,
+        17,
+        21
+      ],
+      "comparisonAlias": "13b9",
+      "externalIntervals": [
+        0,
+        4,
+        7,
+        10,
+        13,
+        21
+      ],
+      "status": "different_convention",
+      "cavaquinhoFingeringReview": "pending_external_instrument_material"
+    }
+  ]
+}

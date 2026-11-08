@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {findVoicings,diagram,chordCards} from '../src/chords.js';
+import {planFingering,referenceFingering} from '../src/fingering.js';
+test('Casa de Bamba: Bbm usa dedos 2–3–1–4 sem pestana',()=>{
+ const v=findVoicings('Bbm').results.find(v=>v.frets.join()==='3,3,2,3');
+ assert.ok(v);assert.deepEqual(v.notes,['F','Bb','Db','F']);assert.deepEqual(v.fingering.fingers,[2,3,1,4]);assert.equal(v.fingering.fingerCount,4);assert.deepEqual(v.fingering.barres,[]);assert.equal(v.fingering.origin,'reference');assert.ok(!diagram(v).includes('class="chord-barre"'));assert.match(chordCards('Bbm'),/Casa de Bamba/);
+});
+test('padrão menor móvel mantém a digitação da referência quando transposto',()=>{
+ for(let delta=-1;delta<=9;delta++){
+  const symbol=['A','Bb','B','C','C#','D','Eb','E','F','F#','G'][delta+1]+'m';
+  const frets=[3,3,2,3].map(f=>f+delta),v=findVoicings(symbol).results.find(v=>v.frets.join()===frets.join());
+  assert.ok(v,symbol);assert.deepEqual(v.fingering.fingers,[2,3,1,4],symbol);assert.equal(v.fingering.barres.length,0);
+ }
+});
+test('referência documentada prevalece sobre a sugestão geométrica sem alterar outras famílias',()=>{
+ const planned=planFingering([3,3,2,3]);assert.ok(planned.barres.length>0);
+ const actual=findVoicings('Bbm').results.find(v=>v.frets.join()==='3,3,2,3');assert.equal(actual.fingering.barres.length,0);assert.deepEqual(actual.fingering.fingers,[2,3,1,4]);
+ assert.ok(planFingering([7,5,5,5]).barres.some(b=>b.fret===5));
+});
+test('digitação cadastrada inconsistente é recusada em vez de inventar pestana',()=>{
+ assert.equal(referenceFingering([3,3,2,3],{fingers:[2,2,1,4],barres:[]}),null);
+ assert.equal(referenceFingering([3,0,2,3],{fingers:[2,3,1,4],barres:[]}),null);
+ assert.equal(referenceFingering([3,3,2,3],{fingers:[2,3,1,5],barres:[]}),null);
+ assert.ok(referenceFingering([3,3,2,3],{fingers:[2,3,1,4],barres:[]}));
+});

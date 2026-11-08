@@ -1,10 +1,11 @@
-import {sortShapes} from './chord-presentation.js?v=0.17.1';
-import {parseChord} from './harmony.js?v=0.17.1';
-import {MAX_FRET} from './instrument.js?v=0.17.1';
+import {referenceFingering} from './fingering.js?v=0.17.2';
+import {sortShapes} from './chord-presentation.js?v=0.17.2';
+import {parseChord} from './harmony.js?v=0.17.2';
+import {MAX_FRET} from './instrument.js?v=0.17.2';
 // Referências enviadas pelo aluno e padrões móveis calculados identificados por origin.
 // Não é um levantamento de frequência de uso entre músicos.
 export const REFERENCE_SHAPES=[
- {symbol:'Bbm',frets:[3,3,2,3],origin:'calculated'},
+ {symbol:'Bbm',frets:[3,3,2,3],fingers:[2,3,1,4],barres:[],source:'Casa de Bamba — imagem enviada pelo aluno'},
  {symbol:'Am7',frets:[7,5,5,5]}, {symbol:'Bm7',frets:[4,2,0,0]},
  {symbol:'A9',frets:[7,6,8,9]}, {symbol:'C7(13)',frets:[5,3,5,7]},
  {symbol:'Em9',frets:[2,0,3,4]}, {symbol:'Asus4',frets:[2,2,3,2]},
@@ -23,3 +24,18 @@ export function selectPrimary(chord,results,preferred){
  return {shape:sortShapes([...results],'simple')[0],type:'calculated',title:'Sugestão inicial',description:preferred?'Sua principal não atende aos filtros atuais. Esta é uma alternativa calculada.':'Ainda não há forma de referência cadastrada para esta consulta. Sugestão calculada; você pode definir sua principal.'};
 }
 export function browserPrimary(chord){try{return readPrimary(window.localStorage,chord);}catch{return null;}}
+
+export function findReferenceFingering(chord,frets){
+ for(const reference of REFERENCE_SHAPES){
+  if(!reference.fingers)continue;
+  const source=parseChord(reference.symbol);if(source.quality!==chord.quality)continue;
+  const delta=(chord.root-source.root+12)%12;
+  for(const offset of [delta,delta-12]){
+   const moved=reference.frets.map(f=>f<0?f:f+offset);
+   if(moved.some(f=>f<0||f>MAX_FRET)||moved.join()!==frets.join())continue;
+   const plan=referenceFingering(frets,reference);
+   if(plan)return {...plan,transposed:offset!==0};
+  }
+ }
+ return null;
+}

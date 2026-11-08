@@ -14,3 +14,21 @@ export function planFingering(frets){
  assign([],1);const fingers=[null,null,null,null];contacts.forEach((c,i)=>{c.finger=allocation.list[i];for(let j=0;j<4;j++)if(c.mask&(1<<j))fingers[j]=c.finger;});
  return {fingers,contacts,barres:contacts.filter(c=>c.barre),fingerCount:contacts.length};
 }
+
+// Reference finger numbers are data, not a hint for the optimizer to rewrite.
+export function referenceFingering(frets,reference){
+ const fingers=reference.fingers;if(!Array.isArray(fingers)||fingers.length!==4)return null;
+ for(let i=0;i<4;i++)if(frets[i]>0?(!Number.isInteger(fingers[i])||fingers[i]<1||fingers[i]>4):fingers[i]!==null)return null;
+ const contacts=[];
+ for(const finger of new Set(fingers.filter(f=>f!==null))){
+  const strings=fingers.flatMap((f,i)=>f===finger?[i]:[]),fret=frets[strings[0]];
+  if(strings.some(i=>frets[i]!==fret))return null;
+  if(strings.length===1){const i=strings[0];contacts.push({finger,fret,from:i,to:i,mask:1<<i,barre:false});continue;}
+  const b=reference.barres?.find(b=>b.finger===finger&&b.fret===fret&&b.from<=Math.min(...strings)&&b.to>=Math.max(...strings));
+  if(!b||b.from<0||b.to>3||b.from>=b.to||frets.slice(b.from,b.to+1).some(f=>f<fret))return null;
+  const mask=strings.reduce((mask,i)=>mask|1<<i,0);
+  if(frets.some((f,i)=>i>=b.from&&i<=b.to&&f===fret&&!(mask&(1<<i))))return null;
+  contacts.push({...b,mask,barre:true});
+ }
+ return {fingers:[...fingers],contacts,barres:contacts.filter(c=>c.barre),fingerCount:contacts.length,origin:'reference',source:reference.source||'Referência cadastrada'};
+}
