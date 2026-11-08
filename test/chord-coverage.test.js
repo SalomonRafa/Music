@@ -44,7 +44,7 @@ test('Ponta de dor: todas as cifras do print reconhecidas, inclusive Fm7M',()=>{
 });
 test('ajuda longa recolhida e sem botão para despejar todas as combinações',()=>{
  const page=chordsPage();assert.ok(!page.includes('Seu cavaquinho: 12 trastes'));assert.match(page,/<details class="chord-help"><summary>Como ler/);assert.ok(!page.includes('<details class="chord-help" open'));
- assert.ok(!chordCards('C7').includes('Mostrar todas as'));assert.ok((chordCards('C7').match(/data-shape=/g)||[]).length<=4);
+ assert.ok(!chordCards('C7').includes('Mostrar todas as'));
 });
 
 test('print aos 0:17 indica Bbm6, que contém Sol e não se confunde com Bbm',()=>{

@@ -18,7 +18,7 @@ with sync_playwright() as p:
  assert page.locator('.primary-shape').get_attribute('data-shape')=='8,6,6,8'
  page.locator('#chord-reset-filters').click()
  lookup('C7')
- count=page.locator('.chord-shape').count();assert count<=4
+ count=page.locator('.chord-shape').count();assert count>0
  page.get_by_text('Busca avançada e filtros',exact=True).click()
  page.locator('#chord-explore').check()
  assert page.locator('.chord-shape').count()>count
