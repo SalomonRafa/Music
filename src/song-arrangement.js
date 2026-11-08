@@ -1,7 +1,7 @@
-import {studyCandidates} from './chord-presentation.js?v=0.17.2';
-import {extractChartChords} from './chart-parser.js?v=0.17.2';
-import {findVoicings,parseChord} from './chords.js?v=0.17.2';
-import {preferenceKey,selectPrimary,browserPrimary} from './shape-priority.js?v=0.17.2';
+import {studyCandidates} from './chord-presentation.js?v=0.17.3';
+import {extractChartChords} from './chart-parser.js?v=0.17.3';
+import {findVoicings,parseChord} from './chords.js?v=0.17.3';
+import {preferenceKey,selectPrimary,browserPrimary} from './shape-priority.js?v=0.17.3';
 export const extractSongChords=extractChartChords;
 export function songShapeKey(symbol,steps=0){const chord=parseChord(symbol);return chord?`${steps}:${preferenceKey(chord)}`:null;}
 export function resolveSongShape(symbol,arrangement={},steps=0){const data=findVoicings(symbol),key=songShapeKey(symbol,steps),saved=arrangement.shapes?.[key];const selected=selectPrimary(data.chord,data.results,saved||browserPrimary(data.chord));return {data,key,shape:selected?.shape||null,explicit:!!saved&&!!selected&&selected.type==='personal'};}
