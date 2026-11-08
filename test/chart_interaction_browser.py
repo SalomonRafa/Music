@@ -4,7 +4,7 @@ source='Intro:|G#|Cm7|Fm7|G#7(4/9)| 2x\nLinha de estudo\nCm7 Calt Fm7\nC#9D#9\n[
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000},has_touch=True);errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.16.0');page.get_by_role('button',name='Repertório',exact=True).click()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.16.1');page.get_by_role('button',name='Repertório',exact=True).click()
  page.locator('#song-source').fill(source);page.locator('#preview-chart').click()
  buttons=page.locator('#chart [data-lookup]');count=buttons.count();assert count>50
  # Clique em cada ocorrência enquanto o desenho anterior permanece aberto.

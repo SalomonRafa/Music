@@ -46,3 +46,23 @@ test('ajuda longa recolhida e opção de mostrar todas as variações',()=>{
  const page=chordsPage();assert.ok(!page.includes('Seu cavaquinho: 12 trastes'));assert.match(page,/<details class="chord-help"><summary>Como ler/);assert.ok(!page.includes('<details class="chord-help" open'));
  assert.match(chordCards('C7'),/Mostrar todas as/);
 });
+
+test('print aos 0:17 indica Bbm6, que contém Sol e não se confunde com Bbm',()=>{
+ const minor=parseChord('Bbm'),sixth=parseChord('Bbm6');
+ assert.deepEqual(sixth.tones.map(t=>t.note),['Bb','Db','F','G']);
+ assert.ok(!minor.tones.some(t=>t.pc===7));
+ const shape=findVoicings('Bbm6').results.find(v=>v.frets.join()==='3,3,2,5');
+ assert.ok(shape);assert.deepEqual(shape.notes,['F','Bb','Db','G']);assert.equal(shape.omitted.length,0);
+ assert.ok(!findVoicings('Bbm').results.some(v=>v.frets.join()==='3,3,2,5'));
+});
+
+test('mesmo desenho é Bbm6 completo e Eb9 sem fundamental; Am na quinta casa permanece distinto',async()=>{
+ const {equivalentShapeReading}=await import('../src/chords.js');
+ const a=findVoicings('Bbm6'),b=findVoicings('Eb7/9');
+ const left=a.results.find(v=>v.frets.join()==='3,3,2,5'),right=b.results.find(v=>v.frets.join()==='3,3,2,5');
+ assert.ok(left&&right);assert.deepEqual(left.notes,right.notes);assert.deepEqual(right.omitted.map(t=>t.note),['Eb']);
+ assert.match(equivalentShapeReading(left,a.chord),/Eb9 sem fundamental/);
+ assert.match(equivalentShapeReading(right,b.chord),/Bbm6/);
+ const am=findVoicings('Am').results.find(v=>v.frets.join()==='7,5,5,7');
+ assert.ok(am);assert.deepEqual(am.notes,['A','C','E','A']);
+});

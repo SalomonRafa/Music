@@ -1,6 +1,6 @@
-import {sortShapes} from './chord-presentation.js?v=0.16.0';
-import {parseChord} from './harmony.js?v=0.16.0';
-import {MAX_FRET} from './instrument.js?v=0.16.0';
+import {sortShapes} from './chord-presentation.js?v=0.16.1';
+import {parseChord} from './harmony.js?v=0.16.1';
+import {MAX_FRET} from './instrument.js?v=0.16.1';
 // Referências enviadas pelo aluno e padrões móveis calculados identificados por origin.
 // Não é um levantamento de frequência de uso entre músicos.
 export const REFERENCE_SHAPES=[

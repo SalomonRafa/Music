@@ -5,7 +5,7 @@ with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.add_init_script('if(!window.localStorage.getItem("mestre-songbook-v1"))window.localStorage.setItem("mestre-songbook-v1",'+json.dumps(json.dumps([{'id':'legacy','title':'Espelhos D’água · teste','text':text}]))+')')
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.16.0')
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.16.1')
  page.get_by_role('button',name='Repertório',exact=True).click();page.locator('#saved-songs').select_option('legacy')
  assert page.locator('#song-source').input_value()==text
  assert page.locator('#song-diagrams [data-open-chord="G#7(4/9)"]').count()==1

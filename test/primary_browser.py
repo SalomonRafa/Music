@@ -3,7 +3,7 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.16.0')
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.16.1')
  def lookup(symbol):
   page.get_by_role('button',name='Acordes',exact=True).click();page.locator('#chord-symbol').fill(symbol);page.get_by_role('button',name='Consultar acorde',exact=True).click()
  lookup('Em9')
@@ -18,7 +18,7 @@ with sync_playwright() as p:
  page.reload();lookup('Em7(9)');assert page.locator('.primary-shape').get_attribute('data-shape')==chosen
  page.get_by_role('button',name='Repertório',exact=True).click();page.locator('#song-source').fill('Em9');page.locator('#preview-chart').click();page.locator('#chart [data-lookup="Em9"]').click();page.locator('#choose-song-shape').click()
  assert page.locator('#lookup-area .primary-shape').get_attribute('data-shape')==chosen
- lookup('Em9');page.locator('#chord-results [data-reset-primary]').click()
+ lookup('Em9');page.locator('.primary-shape summary').click();page.locator('#chord-results [data-reset-primary]').click()
  assert page.locator('.primary-shape').get_attribute('data-shape')=='2,0,3,4'
  page.get_by_text('Filtros de posições e omissões',exact=True).click();page.locator('#chord-max').fill('0');page.get_by_role('button',name='Consultar acorde',exact=True).click();assert page.locator('.primary-shape').count()==0
  page.locator('#chord-max').fill('12');page.get_by_role('button',name='Consultar acorde',exact=True).click();assert page.locator('.primary-shape').count()==1
