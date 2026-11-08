@@ -1,12 +1,12 @@
 # Auditoria musical do dicionário — 08/11/2026
 
-**Estado: parcial. A revisão externa de digitações de todo o catálogo não está concluída.**
+**Estado: revisão parcial do catálogo completo, com a apostila enviada já analisada.** Veja a [revisão crítica do PDF](audit/REVISAO_APOSTILA_CAVAQUINHO.md).
 
 ## Correção comprovada nesta entrega
 
 A imagem “Casa de Bamba” fornecida pelo usuário documenta Bbm nas casas **3–3–2–3**, dedos **2–3–1–4**, sem pestana, da 4ª à 1ª corda. Afinação brasileira usada: D4–G4–B4–D5. A disposição soa F–Bb–Db–F. O aplicativo substituía essa digitação por uma pestana calculada no dedo médio. Agora a referência explícita de dedos e pestanas é preservada em todas as telas. As transposições fechadas compatíveis também preservam os dedos; transposições que exigem dedo em corda solta são recusadas pela validação e não recebem esse selo.
 
-A origem “Casa de Bamba” é a imagem anexada pelo usuário. Não foi localizado/consultado um endereço original dessa imagem na web, nem medida sua frequência de uso. A correção não é prova de revisão técnica de todas as outras posições. O planejador geométrico das demais famílias não foi reescrito com uma regra ergonômica suposta.
+A origem “Casa de Bamba” é a imagem anexada pelo usuário. Não foi localizado/consultado um endereço original dessa imagem na web, nem medida sua frequência de uso. A correção não é prova de revisão técnica de todas as outras posições. Naquela etapa, o planejador das demais famílias foi preservado. Na versão 0.18.0, a regra automática passou a permitir repetição apenas do indicador em uma pestana na menor casa pressionada; digitações documentadas prevalecem sobre esse cálculo. Isso é uma restrição conservadora, não certificação de conforto.
 
 ## Fontes externas efetivamente consultadas
 
@@ -26,24 +26,24 @@ Não houve alteração silenciosa dessas fórmulas nesta entrega.
 
 ## Cobertura por família
 
-A tabela abaixo cobre fórmulas genéricas, transponíveis às 12 fundamentais. **Toda a revisão externa de digitação por instrumento permanece pendente**, exceto a referência pontual de Bbm e as referências anteriores da conversa (não equivalentes a uma pesquisa de catálogo na internet).
+A tabela abaixo cobre fórmulas genéricas, transponíveis às 12 fundamentais. A apostila enviada acrescenta referências de seis famílias, em posições específicas. As demais famílias e as posições não cobertas continuam sem revisão documental de digitação; transposições são rotuladas como derivadas.
 
 | Família | Intervalos do app (semitons) | Comparação externa de fórmula | Revisão de digitação em material de cavaquinho |
 |---|---|---|---|
 | 5 | 0, 7 | Mesmas classes de altura | Pendente |
 | 6 | 0, 4, 7, 9 | Mesmas classes de altura | Pendente |
-| 7 | 0, 4, 7, 10 | Mesmas classes de altura | Pendente |
+| 7 | 0, 4, 7, 10 | Mesmas classes de altura | Apostila: 12/12 fundamentais, posições específicas |
 | 9 | 0, 4, 7, 10, 14 | Mesmas classes de altura | Pendente |
 | 11 | 0, 4, 7, 10, 14, 17 | Convenção diferente — pendente | Pendente |
 | 13 | 0, 4, 7, 10, 14, 17, 21 | Convenção diferente — pendente | Pendente |
-| Maior | 0, 4, 7 | Mesmas classes de altura | Pendente |
-| m | 0, 3, 7 | Mesmas classes de altura | Pendente |
-| maj7 | 0, 4, 7, 11 | Mesmas classes de altura | Pendente |
-| m7 | 0, 3, 7, 10 | Mesmas classes de altura | Pendente |
+| Maior | 0, 4, 7 | Mesmas classes de altura | Apostila: 12/12 fundamentais, posições específicas |
+| m | 0, 3, 7 | Mesmas classes de altura | Apostila: 11/12 fundamentais, posições específicas |
+| maj7 | 0, 4, 7, 11 | Mesmas classes de altura | Apostila: 7/12 fundamentais, posições específicas |
+| m7 | 0, 3, 7, 10 | Mesmas classes de altura | Apostila: 9/12 fundamentais, posições específicas |
 | m6 | 0, 3, 7, 9 | Mesmas classes de altura | Pendente |
 | dim | 0, 3, 6 | Mesmas classes de altura | Pendente |
 | dim7 | 0, 3, 6, 9 | Mesmas classes de altura | Pendente |
-| m7b5 | 0, 3, 6, 10 | Mesmas classes de altura | Pendente |
+| m7b5 | 0, 3, 6, 10 | Mesmas classes de altura | Apostila: 9/12 fundamentais, posições específicas |
 | aug | 0, 4, 8 | Mesmas classes de altura | Pendente |
 | sus2 | 0, 2, 7 | Mesmas classes de altura | Pendente |
 | sus4 | 0, 5, 7 | Mesmas classes de altura | Pendente |
@@ -85,8 +85,12 @@ O proxy retornou HTTP 403 no CONNECT para o Cifra Club. GitHub e raw.githubuserc
 
 Foi salva uma proposta de liberação de rede, sem aplicar ou publicar: Cifra Club, Cifras.com.br, Descomplicando a Música, mecanismos de busca e API pública do GitHub. Para acesso efetivo, o usuário precisa revisar/salvar/publicar a alteração nas configurações do ambiente, conforme o fluxo da plataforma. Publicar o ambiente é separado de atualizar o aplicativo. Após a ativação, testar nova conexão antes de prosseguir.
 
-Próxima fase: localizar materiais específicos de cavaquinho, registrar autor/URL/afinação e orientação das cordas; comparar casas, notas, dedos e pestanas das formas-base; classificar divergências; incluir apenas referências rastreáveis e transposições compatíveis. Critérios de conforto e repertório não se comprovam por igualdade de notas.
+A apostila do usuário foi posteriormente recebida e analisada; a continuação para as famílias ausentes exige localizar outros materiais específicos de cavaquinho, registrar autor/URL/afinação e orientação das cordas; comparar casas, notas, dedos e pestanas das formas-base; classificar divergências; incluir apenas referências rastreáveis e transposições compatíveis. Critérios de conforto e repertório não se comprovam por igualdade de notas.
 
 ## Evidência e reprodução
 
 O registro estruturado por família está em [audit/chord-formula-review.json](audit/chord-formula-review.json). Para repetir a comparação com uma cópia do arquivo externo, execute `node scripts/audit-external-formulas.mjs caminho/tonal-chord-types.ts`. Não exige acesso à rede durante os testes. Os testes internos de cobertura e de notas continuam separados da revisão externa; sua aprovação não significa endosso por professor.
+
+## Atualização com o PDF enviado
+
+A leitura crítica do material de Betto Correa gerou referências com páginas e digitações explícitas e identificou divergências no próprio documento. Consulte [audit/REVISAO_APOSTILA_CAVAQUINHO.md](audit/REVISAO_APOSTILA_CAVAQUINHO.md). A base documentada não é uma alegação de que todo o catálogo ou todas as suas posições estejam certificados.

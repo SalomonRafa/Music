@@ -1,0 +1,3017 @@
+{
+  "source": {
+    "id": "betto-correa-sequencias",
+    "title": "Sequências de acordes para cavaquinho — nível básico e médio",
+    "attributedAuthor": "Betto Correa",
+    "pages": 23,
+    "sha256": "9ae41d686fde9d7f28f3d3fb9ae8529023ac869f1870632a043318adb0f21a82",
+    "providedBy": "Arquivo enviado pelo usuário",
+    "reviewed": "2026-11-08",
+    "tuningAssumption": "D4–G4–B4–D5, 4ª à 1ª; compatibilidade conferida pelas notas, sem declaração explícita de oitavas no PDF."
+  },
+  "baselineCommit": "4f3c6d2debcc81cadc5dd1db41f3e4f2202cf70f",
+  "summary": {
+    "acceptedFingerings": 67,
+    "chordSymbols": 60,
+    "uniquePositions": 66,
+    "allFound": true,
+    "allExactFingeringsAvailable": true,
+    "differentFromPreviousCalculation": 27,
+    "previousNonIndexBarres": 15
+  },
+  "results": [
+    {
+      "symbol": "C",
+      "literal": "C",
+      "frets": [
+        2,
+        0,
+        1,
+        2
+      ],
+      "fingers": [
+        2,
+        null,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        6,
+        10,
+        14,
+        15,
+        17,
+        18
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G",
+        "C",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        null,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "D",
+      "literal": "D",
+      "frets": [
+        4,
+        2,
+        3,
+        4
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        7,
+        11,
+        16,
+        18
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "A",
+        "D",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "E",
+      "literal": "E",
+      "frets": [
+        2,
+        1,
+        0,
+        2
+      ],
+      "fingers": [
+        2,
+        1,
+        null,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        8,
+        12,
+        17
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G#",
+        "B",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        1,
+        null,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "F",
+      "literal": "F",
+      "frets": [
+        3,
+        2,
+        1,
+        3
+      ],
+      "fingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        6,
+        9,
+        10,
+        13,
+        15
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "A",
+        "C",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "G",
+      "literal": "G",
+      "frets": [
+        5,
+        4,
+        3,
+        5
+      ],
+      "fingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        7,
+        10,
+        14,
+        16
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "B",
+        "D",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "A",
+      "literal": "A",
+      "frets": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "fingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 2,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        3,
+        8,
+        11
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "A",
+        "C#",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "B",
+      "literal": "B",
+      "frets": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "fingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 4,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        4,
+        12
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "B",
+        "D#",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Db",
+      "literal": "C#",
+      "frets": [
+        3,
+        1,
+        2,
+        3
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        14
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "Ab",
+        "Db",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Eb",
+      "literal": "Eb",
+      "frets": [
+        5,
+        3,
+        4,
+        5
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        13,
+        15
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "Bb",
+        "Eb",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Gb",
+      "literal": "Gb",
+      "frets": [
+        4,
+        3,
+        2,
+        4
+      ],
+      "fingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        17
+      ],
+      "role": "primary",
+      "notes": [
+        "Gb",
+        "Bb",
+        "Db",
+        "Gb"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Ab",
+      "literal": "Ab",
+      "frets": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "fingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 1,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        13,
+        17
+      ],
+      "role": "primary",
+      "notes": [
+        "Eb",
+        "Ab",
+        "C",
+        "Eb"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Bb",
+      "literal": "Bb",
+      "frets": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "fingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 3,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        9,
+        13,
+        15,
+        17
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "Bb",
+        "D",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Cm",
+      "literal": "Cm",
+      "frets": [
+        5,
+        5,
+        4,
+        5
+      ],
+      "fingers": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        4,
+        9,
+        10,
+        13,
+        15,
+        17,
+        18,
+        19
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "C",
+        "Eb",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 5,
+          "from": 0,
+          "to": 1
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "C#m",
+      "literal": "C#m / Dbm",
+      "frets": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        4,
+        11,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G#",
+        "C#",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 2,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "C#m",
+      "literal": "C#m",
+      "frets": [
+        6,
+        6,
+        5,
+        6
+      ],
+      "fingers": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        12
+      ],
+      "role": "alternative",
+      "notes": [
+        "G#",
+        "C#",
+        "E",
+        "G#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 6,
+          "from": 0,
+          "to": 1
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Dm",
+      "literal": "Dm",
+      "frets": [
+        3,
+        2,
+        3,
+        3
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        4,
+        5,
+        6,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "A",
+        "D",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 3,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Em",
+      "literal": "Em",
+      "frets": [
+        2,
+        0,
+        0,
+        2
+      ],
+      "fingers": [
+        2,
+        null,
+        null,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        5,
+        6,
+        7,
+        11,
+        12,
+        14,
+        16,
+        18,
+        19,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G",
+        "B",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        null,
+        null,
+        2
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Em",
+      "literal": "Em",
+      "frets": [
+        5,
+        4,
+        5,
+        5
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2
+      ],
+      "role": "alternative",
+      "notes": [
+        "G",
+        "B",
+        "E",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 5,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Fm",
+      "literal": "Fm",
+      "frets": [
+        3,
+        1,
+        1,
+        3
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        4,
+        5,
+        6,
+        9,
+        13,
+        14,
+        15
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "Ab",
+        "C",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "F#m",
+      "literal": "F#m",
+      "frets": [
+        4,
+        2,
+        2,
+        4
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        7,
+        8,
+        12,
+        17,
+        19
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "A",
+        "C#",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Gm",
+      "literal": "Gm",
+      "frets": [
+        5,
+        3,
+        3,
+        5
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        13,
+        15
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "Bb",
+        "D",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "G#m",
+      "literal": "G#m / Abm",
+      "frets": [
+        6,
+        4,
+        4,
+        6
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        8,
+        17,
+        18,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "G#",
+        "B",
+        "D#",
+        "G#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Am",
+      "literal": "Am",
+      "frets": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "fingers": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        5,
+        7,
+        8,
+        10,
+        11,
+        14,
+        15,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "A",
+        "C",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 2,
+          "from": 0,
+          "to": 1
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Bbm",
+      "literal": "Bbm / A#m",
+      "frets": [
+        3,
+        3,
+        2,
+        3
+      ],
+      "fingers": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        5,
+        9,
+        17,
+        18
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "Bb",
+        "Db",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 3,
+          "from": 0,
+          "to": 1
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Bm",
+      "literal": "Bm",
+      "frets": [
+        4,
+        4,
+        3,
+        4
+      ],
+      "fingers": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        6,
+        8,
+        10,
+        11,
+        12,
+        16,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "B",
+        "D",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 4,
+          "from": 0,
+          "to": 1
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "A7",
+      "literal": "A7",
+      "frets": [
+        2,
+        0,
+        2,
+        2
+      ],
+      "fingers": [
+        2,
+        null,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        11,
+        13,
+        14,
+        15,
+        18,
+        19,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G",
+        "C#",
+        "E"
+      ],
+      "omitted": [
+        {
+          "note": "A",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        null,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "C7",
+      "literal": "C7",
+      "frets": [
+        5,
+        3,
+        5,
+        5
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        13,
+        14,
+        15,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "Bb",
+        "E",
+        "G"
+      ],
+      "omitted": [
+        {
+          "note": "C",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        1,
+        3,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 3,
+          "fret": 5,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "C#7",
+      "literal": "C#7 / Db7",
+      "frets": [
+        3,
+        4,
+        2,
+        3
+      ],
+      "fingers": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        8,
+        17,
+        19
+      ],
+      "role": "primary",
+      "notes": [
+        "E#",
+        "B",
+        "C#",
+        "E#"
+      ],
+      "omitted": [
+        {
+          "note": "G#",
+          "degree": 5
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "D7",
+      "literal": "D7",
+      "frets": [
+        4,
+        5,
+        3,
+        4
+      ],
+      "fingers": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        21,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "C",
+        "D",
+        "F#"
+      ],
+      "omitted": [
+        {
+          "note": "A",
+          "degree": 5
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Eb7",
+      "literal": "Eb7 / D#7",
+      "frets": [
+        5,
+        6,
+        4,
+        5
+      ],
+      "fingers": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        17,
+        18
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "Db",
+        "Eb",
+        "G"
+      ],
+      "omitted": [
+        {
+          "note": "Bb",
+          "degree": 5
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "E7",
+      "literal": "E7",
+      "frets": [
+        2,
+        1,
+        3,
+        2
+      ],
+      "fingers": [
+        2,
+        1,
+        4,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        5,
+        8,
+        10,
+        11,
+        14,
+        15,
+        21,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G#",
+        "D",
+        "E"
+      ],
+      "omitted": [
+        {
+          "note": "B",
+          "degree": 5
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        1,
+        4,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "F7",
+      "literal": "F7",
+      "frets": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "fingers": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        5,
+        9,
+        13,
+        14,
+        15,
+        17,
+        18
+      ],
+      "role": "primary",
+      "notes": [
+        "Eb",
+        "A",
+        "C",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "F#7",
+      "literal": "F#7",
+      "frets": [
+        2,
+        3,
+        2,
+        4
+      ],
+      "fingers": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        3,
+        4,
+        6,
+        11,
+        12,
+        16,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "A#",
+        "C#",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "G7",
+      "literal": "G7",
+      "frets": [
+        3,
+        4,
+        3,
+        5
+      ],
+      "fingers": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        4,
+        5,
+        6,
+        10,
+        13,
+        15,
+        17,
+        18,
+        19,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "B",
+        "D",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "G#7",
+      "literal": "G#7",
+      "frets": [
+        4,
+        5,
+        4,
+        6
+      ],
+      "fingers": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "barres": [
+        {
+          "fret": 4,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        4
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "B#",
+        "D#",
+        "G#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "G#7",
+      "literal": "G#7",
+      "frets": [
+        4,
+        5,
+        4,
+        6
+      ],
+      "fingers": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        12
+      ],
+      "role": "alternative",
+      "notes": [
+        "F#",
+        "B#",
+        "D#",
+        "G#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Bb7",
+      "literal": "Bb7",
+      "frets": [
+        3,
+        1,
+        3,
+        3
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        13
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "Ab",
+        "D",
+        "F"
+      ],
+      "omitted": [
+        {
+          "note": "Bb",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        1,
+        3,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 3,
+          "fret": 3,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "B7",
+      "literal": "B7",
+      "frets": [
+        4,
+        2,
+        4,
+        4
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2,
+        5,
+        6,
+        7,
+        8,
+        11,
+        12,
+        16,
+        17,
+        19,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "A",
+        "D#",
+        "F#"
+      ],
+      "omitted": [
+        {
+          "note": "B",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        1,
+        3,
+        3
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 3,
+          "fret": 4,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "B7",
+      "literal": "B7",
+      "frets": [
+        1,
+        2,
+        0,
+        4
+      ],
+      "fingers": [
+        1,
+        2,
+        null,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        2
+      ],
+      "role": "alternative",
+      "notes": [
+        "D#",
+        "A",
+        "B",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        null,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Cmaj7",
+      "literal": "C7M",
+      "frets": [
+        5,
+        4,
+        5,
+        5
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        21,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "B",
+        "E",
+        "G"
+      ],
+      "omitted": [
+        {
+          "note": "C",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 5,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Emaj7",
+      "literal": "E7M",
+      "frets": [
+        2,
+        1,
+        0,
+        1
+      ],
+      "fingers": [
+        3,
+        1,
+        null,
+        2
+      ],
+      "barres": [],
+      "pages": [
+        21,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G#",
+        "B",
+        "D#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        null,
+        2
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Fmaj7",
+      "literal": "F7M",
+      "frets": [
+        3,
+        2,
+        1,
+        2
+      ],
+      "fingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "A",
+        "C",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Gmaj7",
+      "literal": "G7M",
+      "frets": [
+        5,
+        4,
+        3,
+        4
+      ],
+      "fingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        21,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "B",
+        "D",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Amaj7",
+      "literal": "A7M",
+      "frets": [
+        7,
+        6,
+        5,
+        6
+      ],
+      "fingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        21,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "A",
+        "C#",
+        "E",
+        "G#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Amaj7",
+      "literal": "A7M",
+      "frets": [
+        2,
+        2,
+        2,
+        6
+      ],
+      "fingers": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "barres": [
+        {
+          "fret": 2,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        22
+      ],
+      "role": "alternative",
+      "notes": [
+        "E",
+        "A",
+        "C#",
+        "G#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Bbmaj7",
+      "literal": "Bb7M",
+      "frets": [
+        8,
+        7,
+        6,
+        7
+      ],
+      "fingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "Bb",
+        "D",
+        "F",
+        "A"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Bmaj7",
+      "literal": "B7M",
+      "frets": [
+        4,
+        3,
+        4,
+        4
+      ],
+      "fingers": [
+        2,
+        1,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "A#",
+        "D#",
+        "F#"
+      ],
+      "omitted": [
+        {
+          "note": "B",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 4,
+          "from": 2,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Dm7",
+      "literal": "Dm7",
+      "frets": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "fingers": [
+        null,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "D",
+        "A",
+        "C",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        null,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Em7",
+      "literal": "Em7",
+      "frets": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "fingers": [
+        2,
+        null,
+        null,
+        null
+      ],
+      "barres": [],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "G",
+        "B",
+        "D"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        null,
+        null,
+        null
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "F#m7",
+      "literal": "F#m7",
+      "frets": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "fingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 2,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "A",
+        "C#",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "G#m7",
+      "literal": "G#m7",
+      "frets": [
+        6,
+        4,
+        4,
+        4
+      ],
+      "fingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 4,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "G#",
+        "B",
+        "D#",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Gm7",
+      "literal": "Gm7",
+      "frets": [
+        5,
+        3,
+        3,
+        3
+      ],
+      "fingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 3,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "Bb",
+        "D",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Am7",
+      "literal": "Am7",
+      "frets": [
+        7,
+        5,
+        5,
+        5
+      ],
+      "fingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 5,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        21,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "A",
+        "C",
+        "E",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Bm7",
+      "literal": "Bm7",
+      "frets": [
+        9,
+        7,
+        7,
+        7
+      ],
+      "fingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 7,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "B",
+        "D",
+        "F#",
+        "A"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Bm7",
+      "literal": "Bm7",
+      "frets": [
+        4,
+        2,
+        3,
+        4
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        22
+      ],
+      "role": "alternative",
+      "notes": [
+        "F#",
+        "A",
+        "D",
+        "F#"
+      ],
+      "omitted": [
+        {
+          "note": "B",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "C#m7",
+      "literal": "C#m7",
+      "frets": [
+        6,
+        4,
+        5,
+        6
+      ],
+      "fingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "G#",
+        "B",
+        "E",
+        "G#"
+      ],
+      "omitted": [
+        {
+          "note": "C#",
+          "degree": 1
+        }
+      ],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "D#m7",
+      "literal": "D#m7",
+      "frets": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "fingers": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "D#",
+        "A#",
+        "C#",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Cm7b5",
+      "literal": "Cm75-",
+      "frets": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "fingers": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 1,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        18
+      ],
+      "role": "primary",
+      "notes": [
+        "Gb",
+        "Bb",
+        "C",
+        "Eb"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "Dm7b5",
+      "literal": "Dm75-",
+      "frets": [
+        6,
+        5,
+        3,
+        3
+      ],
+      "fingers": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 3,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        18,
+        19
+      ],
+      "role": "primary",
+      "notes": [
+        "Ab",
+        "C",
+        "D",
+        "F"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Em7b5",
+      "literal": "Em75-",
+      "frets": [
+        2,
+        3,
+        3,
+        5
+      ],
+      "fingers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        13,
+        19,
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "E",
+        "Bb",
+        "D",
+        "G"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 3,
+          "from": 1,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    },
+    {
+      "symbol": "F#m7b5",
+      "literal": "F#m75-",
+      "frets": [
+        4,
+        2,
+        1,
+        2
+      ],
+      "fingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        19
+      ],
+      "role": "primary",
+      "notes": [
+        "F#",
+        "A",
+        "C",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "G#m7b5",
+      "literal": "Abm75- / G#m75-",
+      "frets": [
+        6,
+        4,
+        3,
+        4
+      ],
+      "fingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        18,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "G#",
+        "B",
+        "D",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "A#m7b5",
+      "literal": "Bbm75- / A#m75-",
+      "frets": [
+        8,
+        6,
+        5,
+        6
+      ],
+      "fingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "barres": [],
+      "pages": [
+        18,
+        22
+      ],
+      "role": "primary",
+      "notes": [
+        "A#",
+        "C#",
+        "E",
+        "G#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        2,
+        1,
+        3
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Bm7b5",
+      "literal": "Bm75-",
+      "frets": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "fingers": [
+        2,
+        1,
+        null,
+        null
+      ],
+      "barres": [],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "F",
+        "A",
+        "B",
+        "D"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        2,
+        1,
+        null,
+        null
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "C#m7b5",
+      "literal": "C#m75-",
+      "frets": [
+        5,
+        4,
+        2,
+        2
+      ],
+      "fingers": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "barres": [
+        {
+          "fret": 2,
+          "to": 3,
+          "finger": 1,
+          "from": 0
+        }
+      ],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "G",
+        "B",
+        "C#",
+        "E"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        4,
+        3,
+        1,
+        1
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "Ab",
+      "literal": "G#",
+      "frets": [
+        6,
+        5,
+        4,
+        6
+      ],
+      "fingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        14
+      ],
+      "role": "alternative",
+      "notes": [
+        "Ab",
+        "C",
+        "Eb",
+        "Ab"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        3,
+        2,
+        1,
+        4
+      ],
+      "previousNonIndexBarres": [],
+      "differentFromPreviousCalculation": false
+    },
+    {
+      "symbol": "D#m7b5",
+      "literal": "D#m75-",
+      "frets": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "fingers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "barres": [],
+      "pages": [
+        21
+      ],
+      "role": "primary",
+      "notes": [
+        "D#",
+        "A",
+        "C#",
+        "F#"
+      ],
+      "omitted": [],
+      "found": true,
+      "exactFingeringAvailable": true,
+      "previousCalculatedFingers": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "previousNonIndexBarres": [
+        {
+          "finger": 2,
+          "fret": 2,
+          "from": 1,
+          "to": 3
+        }
+      ],
+      "differentFromPreviousCalculation": true
+    }
+  ]
+}

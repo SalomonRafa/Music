@@ -5,12 +5,14 @@ with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.add_init_script('if(!window.localStorage.getItem("mestre-songbook-v1"))window.localStorage.setItem("mestre-songbook-v1",'+json.dumps(json.dumps([{'id':'legacy','title':'Espelhos D’água · teste','text':text}]))+')')
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.17.3')
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.18.0')
  page.get_by_role('button',name='Repertório',exact=True).click();page.locator('#saved-songs').select_option('legacy')
  assert page.locator('#song-source').input_value()==text
  assert page.locator('#song-diagrams [data-open-chord="G#7(4/9)"]').count()==1
  page.locator('#chart [data-lookup="G#7(4/9)"]').click();assert page.locator('#chord-popover').is_visible();assert page.locator('#popover-content svg').count()==1
  page.locator('#choose-song-shape').click();assert page.locator('#chord-popover').is_hidden()
+ more=page.locator('#lookup-area .more-chord-shapes > summary')
+ if more.count():more.click()
  chosen=page.locator('#lookup-area .variations-section [data-use-song-shape]').last.get_attribute('data-use-song-shape')
  page.locator('#lookup-area .variations-section [data-use-song-shape]').last.click()
  assert page.locator('#lookup-area .primary-shape').get_attribute('data-shape')==chosen

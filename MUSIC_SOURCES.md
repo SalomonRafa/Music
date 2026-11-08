@@ -18,3 +18,7 @@ Os diagramas são posições calculadas pelas classes de altura, ainda sem revis
 ## Revisão de referências — 08/11/2026
 
 O Bbm do material “Casa de Bamba” enviado pelo usuário foi conferido como casas 3–3–2–3 e dedos 2–3–1–4, sem pestana. A origem fica identificada nos detalhes do desenho. Isso é uma referência pontual; a pesquisa externa de digitações de todo o dicionário permanece pendente. O [relatório de auditoria](MUSIC_AUDIT.md) distingue a confirmação externa de afinação, a comparação independente de fórmulas com Tonal, as convenções divergentes e os bloqueios de acesso.
+
+## Apostila enviada pelo usuário — revisão de 08/11/2026
+
+“Sequências de acordes para cavaquinho — nível básico e médio”, autoria atribuída a Betto Correa, 23 páginas. A formação declarada na capa não foi verificada independentemente. O arquivo foi lido diretamente; sua autoria não elimina a necessidade de conferir diagramas e harmonia. As referências aprovadas preservam dedos, casas, pestanas e páginas; marcadores de casas foram conferidos por notas. A seta de pestana implica uso do indicador por convenção, registrado como inferência. Figuras contraditórias/ambíguas não foram promovidas à base aprovada. Relatório e limites: [revisão crítica](audit/REVISAO_APOSTILA_CAVAQUINHO.md). O PDF integral e imagens não são distribuídos no repositório.

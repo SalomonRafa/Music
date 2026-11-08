@@ -14,7 +14,7 @@ test('padrão menor móvel mantém a digitação da referência quando transpost
  }
 });
 test('referência documentada prevalece sobre a sugestão geométrica sem alterar outras famílias',()=>{
- const planned=planFingering([3,3,2,3]);assert.ok(planned.barres.length>0);
+ const planned=planFingering([3,3,2,3]);assert.deepEqual(planned.fingers,[2,3,1,4]);assert.equal(planned.barres.length,0);
  const actual=findVoicings('Bbm').results.find(v=>v.frets.join()==='3,3,2,3');assert.equal(actual.fingering.barres.length,0);assert.deepEqual(actual.fingering.fingers,[2,3,1,4]);
  assert.ok(planFingering([7,5,5,5]).barres.some(b=>b.fret===5));
 });

@@ -13,6 +13,8 @@ export function parseChord(input){
  if((tail.match(/\(/g)||[]).length!==(tail.match(/\)/g)||[]).length)return null;
  tail=tail.replace(/\(([^()]*)\)/g,'$1');if(/[()]/.test(tail))return null;
  tail=tail.replace(/^o(?=$|7|add|no|omit|[#b(])/,'°');
+ // Legacy Brazilian charts: 75- = 7(b5), 79- = 7(b9), 713- = 7(b13).
+ tail=tail.replace(/(13|11|9|5)([-+])(?=$|[,)/])/g,(_,degree,sign)=>(sign==='-'?'b':'#')+degree);
  tail=tail.replace(/^(?:7M|7\+|M7|Δ7|Δ)/,'maj7').replace(/^m(?:7M|M7|Maj7|maj7)/,'mmaj7').replace(/^min/,'m').replace(/^-/,'m').replace(/^ø7?/,'m7b5').replace(/^°7/,'dim7').replace(/^°/,'dim').replace(/^\+/,'aug');
  const prefix=/^(mmaj|maj|dim|aug|m)?(13|11|9|7|6|5)?/.exec(tail);let family=prefix[1]||'',extension=Number(prefix[2]||0),rest=tail.slice(prefix[0].length);
  const tones=[{degree:1,interval:0},{degree:3,interval:family.startsWith('m')&&family!=='maj'?3:4},{degree:5,interval:family==='dim'?6:family==='aug'?8:7}];
@@ -24,7 +26,7 @@ export function parseChord(input){
  if(extension>=7){add(7,family==='maj'||family==='mmaj'?11:family==='dim'?9:10);if(extension>=9)add(9,14);if(extension>=11)add(11,17);if(extension>=13)add(13,21);}
  // 6/9 é extensão; /E é indicação de baixo.
  if(rest.startsWith('/9')&&extension===6){add(9,14);rest=rest.slice(2);}
- if(extension>=6)rest=rest.replace(/\/(?=\d)/g,'');
+ if(extension>=6)rest=rest.replace(/\/(?=[#b]?\d)/g,'');
  const sus=/^sus([24])?/.exec(rest);if(sus){remove(3);const degree=Number(sus[1]||4);if(degree===4)remove(11);if(degree===2)remove(9);add(degree,baseDegrees[degree]);rest=rest.slice(sus[0].length);}
  const altered=new Set();
  while(rest){rest=rest.replace(/^[,;]/,'');if(!rest)break;const token=/^(add|no|omit)?([#b]?)(13|11|9|7|6|5|4|3|2)/.exec(rest);if(!token)return null;const action=token[1]||'',sign=token[2],degree=Number(token[3]);rest=rest.slice(token[0].length);

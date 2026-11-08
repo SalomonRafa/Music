@@ -9,7 +9,7 @@ with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--use-file-for-fake-audio-capture='+wave_path])
  c=b.new_context(permissions=['microphone'],viewport={'width':1440,'height':1000});page=c.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
  page.add_init_script('''window.captureCount=0;window.openTracks=[];const gum=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);navigator.mediaDevices.getUserMedia=async (...args)=>{window.captureCount++;const s=await gum(...args);window.openTracks.push(...s.getTracks());return s;}''')
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.17.3');page.get_by_role('button',name='Áudio',exact=True).click();page.get_by_text('Áudio · 0.17.3',exact=True).wait_for()
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.18.0');page.get_by_role('button',name='Áudio',exact=True).click();page.get_by_text('Áudio · 0.18.0',exact=True).wait_for()
  page.get_by_role('button',name='Iniciar gravação',exact=True).click();page.get_by_role('button',name='Parar gravação',exact=True).wait_for();page.wait_for_function("document.querySelector('#signal-label').textContent==='recebendo som'")
  page.locator('#target-note').select_option(label='4ª corda · Ré4 (D4)');page.get_by_role('button',name='Ligar afinador',exact=True).click();page.wait_for_function("document.querySelector('#pitch').textContent==='Ré4'")
  assert page.evaluate('window.captureCount')==1
@@ -44,7 +44,7 @@ with wave.open(wave_path,"wb") as f:
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--use-file-for-fake-audio-capture='+wave_path])
  c=b.new_context(permissions=['microphone']);page=c.new_page()
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.17.3')
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.18.0')
  page.get_by_role('button',name='Áudio',exact=True).click()
  page.locator('#target-note').select_option(label='4ª corda · Ré4 (D4)')
  page.get_by_role('button',name='Ligar afinador',exact=True).click()
@@ -73,7 +73,7 @@ with wave.open(wave_path,"wb") as f:
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox','--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream','--use-file-for-fake-audio-capture='+wave_path])
  c=b.new_context(permissions=['microphone']);page=c.new_page()
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.17.3')
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.18.0')
  page.get_by_role('button',name='Áudio',exact=True).click()
  page.locator('#target-note').select_option(label='4ª corda · Ré4 (D4)')
  page.get_by_role('button',name='Ligar afinador',exact=True).click()

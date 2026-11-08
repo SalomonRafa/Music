@@ -3,7 +3,7 @@ import os
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
- page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.17.3')
+ page.goto(os.environ.get('APP_URL','http://127.0.0.1:3000/')+'?v=0.18.0')
  def lookup(symbol):
   page.get_by_role('button',name='Acordes',exact=True).click();page.locator('#chord-symbol').fill(symbol);page.get_by_role('button',name='Consultar acorde',exact=True).click()
  lookup('Em9')
