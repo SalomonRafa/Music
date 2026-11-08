@@ -1,4 +1,4 @@
-import {STANDARD_TUNING,LEGACY_INCORRECT_TUNING} from './instrument.js?v=0.15.0';
+import {STANDARD_TUNING,LEGACY_INCORRECT_TUNING} from './instrument.js?v=0.16.0';
 export const exercises=[
  {id:'pulse',title:'Encontre o pulso',label:'Ritmo',minutes:3,bpm:60,description:'Abafe as cordas suavemente com a mão esquerda. Faça uma palhetada para baixo a cada clique, sem apertar os dedos contra a escala.',success:'Complete 4 grupos de 8 cliques sem interromper o pulso. Se perder o clique, recomece o grupo.'},
  {id:'clarity',title:'Uma nota de cada vez',label:'Clareza',minutes:4,bpm:null,description:'Com o instrumento afinado, toque cada corda solta separadamente. Escute se o som fica livre. Depois pressione uma corda na primeira casa, perto do traste, e compare. Use apenas a pressão necessária.',success:'Toque as 4 cordas soltas e uma nota pressionada com som claro, sem dor. Repita 3 vezes.'},
