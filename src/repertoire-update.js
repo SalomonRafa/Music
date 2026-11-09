@@ -28,10 +28,10 @@ export const nadaPorMim={
 {subtitle: Versão Encontro de Batuqueiros}
 {key: G}
 
-[G7M]Você me tem[Am7] fácil demais [Dm7]
+[G7M]Você me tem[Am7] fácil demais [Dm]
 [G7(13)]Mas não p[C7M]arece capaz
 [Cm6]De cuidar do qu[G7M]e pos[D4]sui [D]
-[G7M]Você sorri[Am7]u e me propô[Dm7]s
+[G7M]Você sorri[Am7]u e me propô[Dm]s
 [G7(13)]Que eu te [C7M]deixasse em paz
 [Cm6]Me disse vai,[G7M] eu não fui
 
@@ -39,11 +39,11 @@ export const nadaPorMim={
 [G7M]Não faça [A/C#]nada por[C7M] mim
 [Cm6]Não vá pe[F7(9)]nsando [G7M]que eu sou seu
 
-[G7M]Você me di[Am7]z o que faze[Dm7]r
+[G7M]Você me di[Am7]z o que faze[Dm]r
 [G7(13)]Mas não pro[A/C#]cura entender
 [Cm6]Que eu faço só p[G7M]ra te[D4] agr[D]adar
 
-[G7M]Me diz até[Am7] o que vestir[Dm7]
+[G7M]Me diz até[Am7] o que vestir[Dm]
 [G7(13)]Com quem andar[C7M] e aonde ir
 [Cm6]E não me ped[G7M]e pra voltar
 
@@ -84,6 +84,24 @@ export function correctNadaPorMim(storage){
    const backup='mestre-song-backup-nada-por-mim-am7-v1';
    if(!storage.getItem(backup))storage.setItem(backup,JSON.stringify(song));
    changed=true;return {...song,text,nadaPorMimAm7Corrected:true};
+  });
+  if(changed)storage.setItem(key,JSON.stringify(next));
+  return changed;
+ }catch{return false;}
+}
+
+export function correctNadaPorMimDm(storage){
+ const key='mestre-songbook-v1';
+ try{
+  const songs=JSON.parse(storage.getItem(key)||'[]');
+  if(!Array.isArray(songs))return false;
+  let changed=false;
+  const next=songs.map(song=>{
+   if(song?.id!==nadaPorMim.id||song.nadaPorMimDmCorrected||typeof song.text!=='string')return song;
+   const backup='mestre-song-backup-nada-por-mim-dm-v1';
+   if(!storage.getItem(backup))storage.setItem(backup,JSON.stringify(song));
+   changed=true;
+   return {...song,text:song.text.replace(/\[Dm7\]/g,'[Dm]'),nadaPorMimDmCorrected:true};
   });
   if(changed)storage.setItem(key,JSON.stringify(next));
   return changed;
