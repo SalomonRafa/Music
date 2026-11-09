@@ -1,14 +1,15 @@
-import {PDF_REFERENCES} from './pdf-references.js?v=0.18.0';
-import {referenceFingering} from './fingering.js?v=0.18.0';
-import {sortShapes} from './chord-presentation.js?v=0.18.0';
-import {parseChord} from './harmony.js?v=0.18.0';
-import {MAX_FRET} from './instrument.js?v=0.18.0';
+import {PDF_REFERENCES} from './pdf-references.js?v=0.18.2';
+import {referenceFingering} from './fingering.js?v=0.18.2';
+import {sortShapes} from './chord-presentation.js?v=0.18.2';
+import {parseChord} from './harmony.js?v=0.18.2';
+import {MAX_FRET} from './instrument.js?v=0.18.2';
 // Referências enviadas pelo aluno e padrões móveis calculados identificados por origin.
 // Não é um levantamento de frequência de uso entre músicos.
 export const REFERENCE_SHAPES=[
  {symbol:'Dm',frets:[3,2,3,3],fingers:[2,1,3,4],barres:[],source:'Imagem de Dm enviada pelo aluno'},
  {symbol:'Bbm',frets:[3,3,2,3],fingers:[2,3,1,4],barres:[],source:'Casa de Bamba — imagem enviada pelo aluno'},
- {symbol:'Am7',frets:[7,5,5,5]}, {symbol:'Bm7',frets:[4,2,0,0]},
+ {symbol:'Am7',frets:[7,5,5,5],fingers:[3,1,1,1],barres:[{fret:5,from:0,to:3,finger:1}]},
+ {symbol:'Am7',frets:[5,5,5,5],fingers:[1,1,1,1],barres:[{fret:5,from:0,to:3,finger:1}],role:'alternative',referenceKind:'reviewed',source:'Forma reduzida de acompanhamento: G–C–E–G, sem a fundamental A',evidenceNote:'Pestana completa na casa 5. As notas também formam C/G; a leitura como Am7 depende do baixo e do contexto.'}, {symbol:'Bm7',frets:[4,2,0,0]},
  {symbol:'A9',frets:[7,6,8,9]}, {symbol:'C7(13)',frets:[5,3,5,7]},
  {symbol:'Em9',frets:[2,0,3,4]}, {symbol:'Asus4',frets:[2,2,3,2]},
  {symbol:'Cmaj7b5',frets:[4,4,5,4]}

@@ -1,4 +1,4 @@
-import {qualities} from './harmony.js?v=0.18.0';
+import {qualities} from './harmony.js?v=0.18.2';
 const GROUPS=[['Tríades e suspensos',['','m','dim','aug','5']],['Suspensos · sus = sus4',['sus2','sus4','7sus2','7sus4','9sus4','13sus4']],['Sétimas',['7','maj7','m7','dim7','m7b5','mMaj7']],['Sextas e notas adicionadas',['6','m6','add9','madd9','6/9','m6/9']],['Extensões · 9ª, 11ª e 13ª',['9','maj9','m9','11','maj11','m11','13','7(13)','maj13','m13','m7(11)']],['Alterados',['maj7b5','maj7#5','7b5','7#5','7(b9)','7(#9)','7(#11)','7(b13)','9(#11)','7(b9,b13)','maj7(#11)','7(b9,#11)','7(#9,b13)','13(b9)']]];
 export const QUALITY_GROUPS=GROUPS.map(([label,keys])=>({label,keys}));
 export function qualityLabel(chord){return qualities[chord.quality]?.label||'Combinação de extensões e alterações';}

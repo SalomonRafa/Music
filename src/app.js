@@ -1,12 +1,12 @@
-import {migrateAindaBem,addNadaPorMim} from './repertoire-update.js?v=0.18.1';
+import {migrateAindaBem,addNadaPorMim} from './repertoire-update.js?v=0.18.2';
 await migrateAindaBem(localStorage);
 addNadaPorMim(localStorage);
-import {chordsPage,mountChords} from './chords.js?v=0.18.0';
-import {songbookPage,mountSongbook} from './songbook.js?v=0.18.1';
+import {chordsPage,mountChords} from './chords.js?v=0.18.2';
+import {songbookPage,mountSongbook} from './songbook.js?v=0.18.2';
 let disposeSongbook=null;
-import {audioPage,mountAudio} from './audio.js?v=0.18.0';
+import {audioPage,mountAudio} from './audio.js?v=0.18.2';
 let disposeAudio=null;
-import {exercises,makePlan,loadState} from './domain.js?v=0.18.0';
+import {exercises,makePlan,loadState} from './domain.js?v=0.18.2';
 let state=loadState(localStorage),view='home',active=null,ticker=null,tempo=60,audio=null,metroTimer=null,beat=0;
 const app=document.querySelector('#app');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

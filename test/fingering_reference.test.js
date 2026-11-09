@@ -24,3 +24,16 @@ test('digitação cadastrada inconsistente é recusada em vez de inventar pestan
  assert.equal(referenceFingering([3,3,2,3],{fingers:[2,3,1,5],barres:[]}),null);
  assert.ok(referenceFingering([3,3,2,3],{fingers:[2,3,1,4],barres:[]}));
 });
+
+test('Am7 mantém a forma completa e oferece a pestana reduzida na consulta normal',()=>{
+ const html=chordCards('Am7');
+ assert.match(html,/data-shape="7,5,5,5"/);
+ assert.match(html,/data-shape="5,5,5,5"/);
+ const v=findVoicings('Am7').results.find(v=>v.frets.join()==='5,5,5,5');
+ assert.deepEqual(v.notes,['G','C','E','G']);
+ assert.deepEqual(v.fingering.fingers,[1,1,1,1]);
+ assert.deepEqual(v.omitted.map(t=>t.note),['A']);
+ assert.equal(v.fingering.barres.length,1);
+ assert.ok(html.indexOf('data-shape="5,5,5,5"')<html.indexOf('more-chord-shapes')||!html.includes('more-chord-shapes'));
+ assert.match(html,/As notas também formam C\/G/);
+});
