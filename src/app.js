@@ -1,7 +1,8 @@
-import {migrateAindaBem} from './repertoire-update.js?v=0.18.0';
+import {migrateAindaBem,addNadaPorMim} from './repertoire-update.js?v=0.18.1';
 await migrateAindaBem(localStorage);
+addNadaPorMim(localStorage);
 import {chordsPage,mountChords} from './chords.js?v=0.18.0';
-import {songbookPage,mountSongbook} from './songbook.js?v=0.18.0';
+import {songbookPage,mountSongbook} from './songbook.js?v=0.18.1';
 let disposeSongbook=null;
 import {audioPage,mountAudio} from './audio.js?v=0.18.0';
 let disposeAudio=null;

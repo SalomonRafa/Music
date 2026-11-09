@@ -1,4 +1,4 @@
-import {migratedSongId} from './repertoire-update.js?v=0.18.0';
+import {migratedSongId} from './repertoire-update.js?v=0.18.1';
 import {parseChartLines} from './chart-parser.js?v=0.18.0';
 import {escapeHtml as esc,transposeChord,chordCards,parseChord,diagram,findVoicings,handlePrimaryButton} from './chords.js?v=0.18.0';
 import {extractSongChords,resolveSongShape,songShapeKey,proposeArrangement} from './song-arrangement.js?v=0.18.0';
