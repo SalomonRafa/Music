@@ -107,3 +107,25 @@ export function correctNadaPorMimDm(storage){
   return changed;
  }catch{return false;}
 }
+
+export const vooProJapao={
+ id:'voo-pro-japao',
+ title:'Voo pro Japão',
+ text:`{title: Voo pro Japão}
+{subtitle: Trecho 1 — transcrito do print enviado}
+[Bb7M] | % | [Dm7/G] | [Cm7/F] | [Bb7M] | [Bb7M] >[D7(#9)] |
+[Fm7] | [Bb7/13] | [Eb7M] | % | [Cm6] | [Am7(b5)] | [Fm6] | % |`,
+ arrangement:{shapes:{},transpose:0},
+ importedSections:['print-1']
+};
+export function addVooProJapao(storage){
+ const key='mestre-songbook-v1',marker='mestre-added-voo-pro-japao-print-1-v1';
+ try{
+  if(storage.getItem(marker))return null;
+  const songs=JSON.parse(storage.getItem(key)||'[]');
+  if(!Array.isArray(songs))return null;
+  if(!songs.some(s=>s?.id===vooProJapao.id))storage.setItem(key,JSON.stringify([...songs,vooProJapao]));
+  storage.setItem(marker,'1');
+  return vooProJapao.id;
+ }catch{return null;}
+}
