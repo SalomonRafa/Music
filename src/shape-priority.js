@@ -1,8 +1,8 @@
-import {PDF_REFERENCES} from './pdf-references.js?v=0.18.8';
-import {referenceFingering} from './fingering.js?v=0.18.8';
-import {sortShapes} from './chord-presentation.js?v=0.18.8';
-import {parseChord} from './harmony.js?v=0.18.8';
-import {MAX_FRET} from './instrument.js?v=0.18.8';
+import {PDF_REFERENCES} from './pdf-references.js?v=0.19.0';
+import {referenceFingering} from './fingering.js?v=0.19.0';
+import {sortShapes} from './chord-presentation.js?v=0.19.0';
+import {parseChord} from './harmony.js?v=0.19.0';
+import {MAX_FRET} from './instrument.js?v=0.19.0';
 // Referências enviadas pelo aluno e padrões móveis calculados identificados por origin.
 // Não é um levantamento de frequência de uso entre músicos.
 export const REFERENCE_SHAPES=[

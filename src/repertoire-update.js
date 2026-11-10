@@ -1,3 +1,4 @@
+import {songShapeKey} from './song-arrangement.js?v=0.19.0';
 export let migratedSongId=null;
 export async function migrateAindaBem(storage,subtle=globalThis.crypto?.subtle){
  if(!subtle)return null;
@@ -126,6 +127,8 @@ export const vooProJapaoSemLetra={
 // repeat/passing markers remain those transcribed from the five screenshots.
 export const vooProJapao={
  ...vooProJapaoSemLetra,
+ arrangement:{shapes:{[songShapeKey('Bb7M')]:[3,3,3,7],[songShapeKey('Dm7/G')]:[3,5,3,5]},transpose:0},
+ videoDm7GApplied:true,
  lyricsApplied:true,
  text:`{title: Voo pro Japão}
 {subtitle: Tom: Bb}
@@ -224,6 +227,24 @@ export function addVooProJapaoLyrics(storage){
    const backup='mestre-song-backup-voo-pro-japao-before-lyrics-v1';
    if(!storage.getItem(backup))storage.setItem(backup,JSON.stringify(song));
    changed=true;return {...song,text:vooProJapao.text,lyricsApplied:true};
+  });
+  if(changed)storage.setItem(key,JSON.stringify(next));
+  return changed;
+ }catch{return false;}
+}
+
+export function applyVooVideoDm7G(storage){
+ const key='mestre-songbook-v1';
+ try{
+  const songs=JSON.parse(storage.getItem(key)||'[]');
+  if(!Array.isArray(songs))return false;
+  let changed=false;
+  const next=songs.map(song=>{
+   if(song?.id!==vooProJapao.id||song.videoDm7GApplied)return song;
+   const backup='mestre-song-backup-voo-pro-japao-before-video-dm7g-v1';
+   if(!storage.getItem(backup))storage.setItem(backup,JSON.stringify(song));
+   changed=true;
+   return {...song,videoDm7GApplied:true,arrangement:{...song.arrangement,shapes:{...song.arrangement?.shapes,[songShapeKey('Bb7M')]:[3,3,3,7],[songShapeKey('Dm7/G')]:[3,5,3,5]}}};
   });
   if(changed)storage.setItem(key,JSON.stringify(next));
   return changed;

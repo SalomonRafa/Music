@@ -1,10 +1,11 @@
-import {studyCandidates} from './chord-presentation.js?v=0.18.8';
-import {extractChartChords} from './chart-parser.js?v=0.18.8';
-import {findVoicings,parseChord} from './chords.js?v=0.18.8';
-import {preferenceKey,selectPrimary,browserPrimary} from './shape-priority.js?v=0.18.8';
+import {accompanimentShape} from './accompaniment-shapes.js?v=0.19.0';
+import {studyCandidates} from './chord-presentation.js?v=0.19.0';
+import {extractChartChords} from './chart-parser.js?v=0.19.0';
+import {findVoicings,parseChord} from './chords.js?v=0.19.0';
+import {preferenceKey,selectPrimary,browserPrimary} from './shape-priority.js?v=0.19.0';
 export const extractSongChords=extractChartChords;
 export function songShapeKey(symbol,steps=0){const chord=parseChord(symbol);return chord?`${steps}:${preferenceKey(chord)}`:null;}
-export function resolveSongShape(symbol,arrangement={},steps=0){const data=findVoicings(symbol),key=songShapeKey(symbol,steps),saved=arrangement.shapes?.[key];const selected=selectPrimary(data.chord,data.results,saved||browserPrimary(data.chord));return {data,key,shape:selected?.shape||null,explicit:!!saved&&!!selected&&selected.type==='personal'};}
+export function resolveSongShape(symbol,arrangement={},steps=0){const data=findVoicings(symbol),key=songShapeKey(symbol,steps),saved=arrangement.shapes?.[key];const preferred=saved||browserPrimary(data.chord),contextual=preferred&&accompanimentShape(symbol,preferred);if(contextual)data.results.push(contextual);const selected=selectPrimary(data.chord,data.results,preferred);return {data,key,shape:selected?.shape||null,explicit:!!saved&&!!selected&&selected.type==='personal'};}
 export function proposeArrangement(symbols,style='low'){
  const issues=[],rows=[],seen=new Set();for(const symbol of symbols){const data=findVoicings(symbol);if(!data.chord||!data.results.length){issues.push({symbol,reason:data.reason});continue;}const key=preferenceKey(data.chord);if(seen.has(key))continue;seen.add(key);const practical=studyCandidates(data.results),rooted=practical.filter(v=>!v.omitted.some(t=>t.degree===1)),pool=rooted.length?rooted:practical;const cost=v=>style==='simple'?v.metrics.difficulty:v.metrics.high*4+v.metrics.spread*7+v.fingering.fingerCount*5+Math.max(...v.frets)*2;
  rows.push({symbol,chord:data.chord,candidates:[...pool].sort((a,b)=>cost(a)-cost(b)).slice(0,12),cost});}
