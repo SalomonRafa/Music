@@ -1,7 +1,7 @@
-import {migratedSongId} from './repertoire-update.js?v=0.18.2';
-import {parseChartLines} from './chart-parser.js?v=0.18.2';
-import {escapeHtml as esc,transposeChord,chordCards,parseChord,diagram,findVoicings,handlePrimaryButton} from './chords.js?v=0.18.2';
-import {extractSongChords,resolveSongShape,songShapeKey,proposeArrangement} from './song-arrangement.js?v=0.18.2';
+import {migratedSongId} from './repertoire-update.js?v=0.18.8';
+import {parseChartLines} from './chart-parser.js?v=0.18.8';
+import {escapeHtml as esc,transposeChord,chordCards,parseChord,diagram,findVoicings,handlePrimaryButton} from './chords.js?v=0.18.8';
+import {extractSongChords,resolveSongShape,songShapeKey,proposeArrangement} from './song-arrangement.js?v=0.18.8';
 export function renderChart(text,steps=0){
  const button=s=>{const symbol=transposeChord(s.symbol,steps);return `<button type="button" class="chord-link${s.recognized?'':' chord-unresolved'}" data-lookup="${esc(symbol)}" aria-label="${s.recognized?'Ver desenho de':'Conferir símbolo'} ${esc(symbol)}" aria-pressed="false">${esc(symbol)}${s.recognized?'':' ?'}</button>`;};
  return parseChartLines(text).map(line=>{if(line.kind==='heading')return `<div class="chart-heading">${esc(line.text)}</div>`;

@@ -1,6 +1,6 @@
-import {separatorPage,mountSeparator} from './stem-separator.js?v=0.18.2';
-import {STRINGS} from './instrument.js?v=0.18.2';
-import {estimateTriad} from './chord-listener.js?v=0.18.2';
+import {separatorPage,mountSeparator} from './stem-separator.js?v=0.18.8';
+import {STRINGS} from './instrument.js?v=0.18.8';
+import {estimateTriad} from './chord-listener.js?v=0.18.8';
 // YIN: diferença normalizada, primeira periodicidade consistente e interpolação subamostra.
 export function detectPitch(data, rate) {
  let mean=0;for(const x of data)mean+=x;mean/=data.length;

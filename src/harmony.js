@@ -9,7 +9,7 @@ const baseDegrees={1:0,2:2,3:4,4:5,5:7,6:9,7:10,9:14,11:17,13:21};
 function spell(root,degree,interval){const letters='CDEFGAB',letter=letters[(letters.indexOf(root[0])+degree-1)%7],target=(pc(root)+interval)%12,natural=pc(letter);let delta=(target-natural+12)%12;if(delta>6)delta-=12;return Math.abs(delta)<=2?letter+(delta>0?'#'.repeat(delta):'b'.repeat(-delta)):names[target];}
 export function parseChord(input){
  const symbol=normalize(input);if(symbol.length>80)return null;
- const m=/^([A-G](?:bb|##|x|b|#)?)(.*?)(?:\/([A-G](?:bb|##|x|b|#)?))?$/.exec(symbol);if(!m)return null;const rootName=m[1];let tail=m[2];tail=tail.replace(/^7\(4[\/,]9\)$/,'9sus4').replace(/^7\(4[\/,]13\)$/,'7sus4(13)');if(/^7\(4\)$/.test(tail))tail='7sus4';if(tail==='4')tail='sus4';
+ const m=/^([A-G](?:bb|##|x|b|#)?)(.*?)(?:\/([A-G](?:bb|##|x|b|#)?))?$/.exec(symbol);if(!m)return null;const rootName=m[1];let tail=m[2];tail=tail.replace(/^7\(4[\/,]9\)$/,'9sus4').replace(/^7\(4[\/,]13\)$/,'7sus4(13)');if(/^7(?:\(4\)|\/4)$/.test(tail))tail='7sus4';if(tail==='4')tail='sus4';
  if((tail.match(/\(/g)||[]).length!==(tail.match(/\)/g)||[]).length)return null;
  tail=tail.replace(/\(([^()]*)\)/g,'$1');if(/[()]/.test(tail))return null;
  tail=tail.replace(/^o(?=$|7|add|no|omit|[#b(])/,'°');

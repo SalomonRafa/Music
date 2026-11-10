@@ -37,3 +37,13 @@ test('Am7 mantém a forma completa e oferece a pestana reduzida na consulta norm
  assert.ok(html.indexOf('data-shape="5,5,5,5"')<html.indexOf('more-chord-shapes')||!html.includes('more-chord-shapes'));
  assert.match(html,/As notas também formam C\/G/);
 });
+
+test('7/4 das cifras brasileiras equivale a 7sus4, sem terça, em todas as fundamentais',()=>{
+ for(const root of ['C','C#','D','Eb','E','F','F#','G','Ab','A','Bb','B']){
+  const slash=findVoicings(root+'7/4'),sus=findVoicings(root+'7sus4');
+  assert.deepEqual(slash.chord.intervals,sus.chord.intervals);
+  assert.equal(slash.chord.quality,'7sus4');
+  assert.ok(!slash.chord.tones.some(t=>t.degree===3));
+  assert.ok(slash.results.length);
+ }
+});
