@@ -108,15 +108,16 @@ export function correctNadaPorMimDm(storage){
  }catch{return false;}
 }
 
+export const vooProJapaoTrecho2='{subtitle: Trecho 2 — transcrito do print enviado}\n[Dm7(b5)] | [B°] | [Eb7M] > [Bb] > [F#°] > [Gm7] | [Cm7] | [D/C] |';
 export const vooProJapao={
  id:'voo-pro-japao',
  title:'Voo pro Japão',
  text:`{title: Voo pro Japão}
 {subtitle: Trecho 1 — transcrito do print enviado}
 [Bb7M] | % | [Dm7/G] | [Cm7/F] | [Bb7M] | [Bb7M] >[D7(#9)] |
-[Fm7] | [Bb7/13] | [Eb7M] | % | [Cm6] | [Am7(b5)] | [Fm6] | % |`,
+[Fm7] | [Bb7/13] | [Eb7M] | % | [Cm6] | [Am7(b5)] | [Fm6] | % |\n\n${vooProJapaoTrecho2}`,
  arrangement:{shapes:{},transpose:0},
- importedSections:['print-1']
+ importedSections:['print-1','print-2']
 };
 export function addVooProJapao(storage){
  const key='mestre-songbook-v1',marker='mestre-added-voo-pro-japao-print-1-v1';
@@ -128,4 +129,22 @@ export function addVooProJapao(storage){
   storage.setItem(marker,'1');
   return vooProJapao.id;
  }catch{return null;}
+}
+
+export function appendVooProJapaoTrecho2(storage){
+ const key='mestre-songbook-v1';
+ try{
+  const songs=JSON.parse(storage.getItem(key)||'[]');
+  if(!Array.isArray(songs))return false;
+  let changed=false;
+  const next=songs.map(song=>{
+   if(song?.id!==vooProJapao.id||typeof song.text!=='string'||song.importedSections?.includes('print-2'))return song;
+   const backup='mestre-song-backup-voo-pro-japao-before-print-2-v1';
+   if(!storage.getItem(backup))storage.setItem(backup,JSON.stringify(song));
+   changed=true;
+   return {...song,text:song.text.includes(vooProJapaoTrecho2)?song.text:song.text.trimEnd()+'\n\n'+vooProJapaoTrecho2,importedSections:[...(Array.isArray(song.importedSections)?song.importedSections:[]),'print-2']};
+  });
+  if(changed)storage.setItem(key,JSON.stringify(next));
+  return changed;
+ }catch{return false;}
 }
