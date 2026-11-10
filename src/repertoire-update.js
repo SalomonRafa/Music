@@ -112,7 +112,7 @@ export const vooProJapaoTrecho2='{subtitle: Trecho 2 — transcrito do print env
 export const vooProJapaoTrecho3='{subtitle: Trecho 3 — transcrito do print enviado}\n[Bm7] > [Bbm7] | [Bbm6] | [Gb7M] | [Gb/Ab] |\n[Db7M] | [Db/Gb] | [Cm7(b5)] | [Eb/F] |';
 export const vooProJapaoTrecho4='{subtitle: Trecho 4 — transcrito do print enviado}\n[Bm7] > [Bbm7] | [Bbm6] | [Gb7M] | [Ebm7/Ab] | [Db7M] |\n[E] > [Eb] > [D] > [Db/Gb] | [F7/4] | [Cm7(b5)] > [F7] |';
 export const vooProJapaoTrecho5='{subtitle: Trecho 5 — transcrito do print enviado}\n[Bb7M] | [Bb6/9] | [Eb7/13] | [Gb/Ab] | [Db7M] | [Gb7M] | [F7/4] | % |\n[Bb7M] | [Bb6/9] | [Eb7/13] | [Gb/Ab] | [Db7M] | [Gb7M] | [F7/4] | % |';
-export const vooProJapao={
+export const vooProJapaoSemLetra={
  id:'voo-pro-japao',
  title:'Voo pro Japão',
  text:`{title: Voo pro Japão}
@@ -122,6 +122,44 @@ export const vooProJapao={
  arrangement:{shapes:{},transpose:0},
  importedSections:['print-1','print-2','print-3','print-4','print-5']
 };
+// Letter placement follows the supplied lyric chart; chord sequence and
+// repeat/passing markers remain those transcribed from the five screenshots.
+export const vooProJapao={
+ ...vooProJapaoSemLetra,
+ lyricsApplied:true,
+ text:`{title: Voo pro Japão}
+{subtitle: Tom: Bb}
+
+[Bb7M]Marque um lugar pra gente se amar | % |
+[Dm7/G]como antes | [Cm7/F] |
+[Bb7M]Vou te buscar | [Bb7M]não dá para viver >[D7(#9)] |
+[Fm7]tão distante | [Bb7/13] |
+[Eb7M]Desse brilho no olhar | % | [Cm6]no meu | [Am7(b5)]amanhecer | [Fm6] | % |
+
+[Dm7(b5)]Do seu jeito amar, desse nosso | [B°]querer |
+[Eb7M]Que saudade que dá > [Bb] > [F#°] > [Gm7]me lembrar | [Cm7]de você | [D/C] |
+
+[Bm7] > [Bbm7]Do último voo pro | [Bbm6]Japão |
+[Gb7M]Da primeira transa no avião | [Gb/Ab] |
+[Db7M]Foi demais | [Db/Gb] |
+[Cm7(b5)]Foi tudo tão | [Eb/F]lindo |
+
+[Bm7] > [Bbm7]Quero voar com você | [Bbm6]dessa vez pro infinito |
+[Gb7M]E pousar no prazer | [Ebm7/Ab] | [Db7M] |
+[E] > [Eb] > [D] > [Db/Gb] |
+[F7/4]Repousar com você, meu amor | [Cm7(b5)] > [F7] |
+
+[Bb7M]É de manhã | [Bb6/9]A lua vai, o sol vem |
+[Eb7/13]Surgindo, trazendo um novo | [Gb/Ab] |
+[Db7M]Amanhecer da noite | [Gb7M]que passei |
+[F7/4]Sem dormir | % |
+
+[Bb7M]É de manhã | [Bb6/9]É tudo tão sem graça |
+[Eb7/13]Para mim | [Gb/Ab] |
+[Db7M]E nada de você dá sinal | [Gb7M]Mais sei que o nosso amor não tem |
+[F7/4]Fim | % |`
+};
+
 export function addVooProJapao(storage){
  const key='mestre-songbook-v1',marker='mestre-added-voo-pro-japao-print-1-v1';
  try{
@@ -169,6 +207,23 @@ export function appendVooProJapaoRemaining(storage){
    let text=song.text;
    for(const [id,section] of missing){if(!text.includes(section))text=text.trimEnd()+'\n\n'+section;imported.push(id);}
    changed=true;return {...song,text,importedSections:imported};
+  });
+  if(changed)storage.setItem(key,JSON.stringify(next));
+  return changed;
+ }catch{return false;}
+}
+
+export function addVooProJapaoLyrics(storage){
+ const key='mestre-songbook-v1';
+ try{
+  const songs=JSON.parse(storage.getItem(key)||'[]');
+  if(!Array.isArray(songs))return false;
+  let changed=false;
+  const next=songs.map(song=>{
+   if(song?.id!==vooProJapao.id||song.lyricsApplied||typeof song.text!=='string')return song;
+   const backup='mestre-song-backup-voo-pro-japao-before-lyrics-v1';
+   if(!storage.getItem(backup))storage.setItem(backup,JSON.stringify(song));
+   changed=true;return {...song,text:vooProJapao.text,lyricsApplied:true};
   });
   if(changed)storage.setItem(key,JSON.stringify(next));
   return changed;

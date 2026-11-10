@@ -1,4 +1,4 @@
-import {migrateAindaBem,addNadaPorMim,correctNadaPorMim,correctNadaPorMimDm,addVooProJapao,appendVooProJapaoTrecho2,appendVooProJapaoRemaining} from './repertoire-update.js?v=0.18.8';
+import {migrateAindaBem,addNadaPorMim,correctNadaPorMim,correctNadaPorMimDm,addVooProJapao,appendVooProJapaoTrecho2,appendVooProJapaoRemaining,addVooProJapaoLyrics} from './repertoire-update.js?v=0.18.9';
 await migrateAindaBem(localStorage);
 addNadaPorMim(localStorage);
 correctNadaPorMim(localStorage);
@@ -6,6 +6,7 @@ correctNadaPorMimDm(localStorage);
 addVooProJapao(localStorage);
 appendVooProJapaoTrecho2(localStorage);
 appendVooProJapaoRemaining(localStorage);
+addVooProJapaoLyrics(localStorage);
 import {chordsPage,mountChords} from './chords.js?v=0.18.8';
 import {songbookPage,mountSongbook} from './songbook.js?v=0.18.8';
 let disposeSongbook=null;
